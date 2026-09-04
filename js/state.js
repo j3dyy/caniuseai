@@ -7,8 +7,9 @@ export class StateStore {
     this.searchQuery = "";
     this.activeCategory = "all";
     this.expandedFeatureId = null;
-    this.activeCodeLang = "python"; // "python" | "typescript"
+    this.activeCodeLang = "python"; // "python" | "typescript" | "go" | "php"
     this.theme = localStorage.getItem("caniuse_theme") || "dark";
+    this.activeModelTarget = null;
     
     // Model Diff Mode state
     this.diffOpen = false;
@@ -68,12 +69,14 @@ export class StateStore {
     this.notify();
   }
 
-  toggleExpandFeature(featureId) {
-    if (this.expandedFeatureId === featureId) {
+  toggleExpandFeature(featureId, modelId = null) {
+    if (this.expandedFeatureId === featureId && (!modelId || this.activeModelTarget === modelId)) {
       this.expandedFeatureId = null;
+      this.activeModelTarget = null;
       window.location.hash = "";
     } else {
       this.expandedFeatureId = featureId;
+      this.activeModelTarget = modelId;
       window.location.hash = featureId;
     }
     this.notify();
@@ -81,7 +84,6 @@ export class StateStore {
 
   setCodeLang(lang) {
     this.activeCodeLang = lang;
-    this.notify();
   }
 
   toggleTheme() {

@@ -614,6 +614,13 @@ input[type="search"]::-webkit-search-results-decoration {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 10px 14px;
+  transition: all var(--transition-fast);
+}
+
+.sdk-param-item.active-model-target {
+  border-color: var(--brand-cyan);
+  background: rgba(6, 182, 212, 0.08);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.25);
 }
 
 .sdk-param-header {
@@ -676,12 +683,22 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 4px 10px;
   border-radius: var(--radius-xs);
   color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
+.code-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .code-tab-btn.active {
-  background: var(--bg-card-subtle);
-  color: var(--brand-cyan);
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.35);
+  color: #38bdf8;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.2);
 }
 
 .code-copy-btn {

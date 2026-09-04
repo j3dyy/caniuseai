@@ -40,6 +40,10 @@ export function renderMatrix(store) {
     };
   }).filter(cat => cat.features.length > 0);
 
+  // Preserve horizontal scroll position before updating innerHTML
+  const prevTableWrap = mount.querySelector(".matrix-table-wrap");
+  const prevScrollLeft = prevTableWrap ? prevTableWrap.scrollLeft : 0;
+
   mount.innerHTML = `
     <div class="container">
       <div class="matrix-container-card">
@@ -51,7 +55,7 @@ export function renderMatrix(store) {
                   <span>Capability / Feature</span>
                 </th>
                 ${models.map(m => `
-                  <th class="th-model">
+                  <th class="th-model" data-model-id="${m.id}">
                     <div class="model-header-cell">
                       <span class="model-header-name">${m.name}</span>
                       <span class="model-header-provider">${m.providerName}</span>
@@ -87,7 +91,7 @@ export function renderMatrix(store) {
                       ${models.map(m => {
                         const s = f.support ? f.support[m.id] : null;
                         return `
-                          <td class="td-model-cell">
+                          <td class="td-model-cell" data-model-id="${m.id}">
                             ${renderStatusBadge(s)}
                           </td>
                         `;
@@ -104,11 +108,49 @@ export function renderMatrix(store) {
     </div>
   `;
 
-  // Attach Row Expansion Handlers
+  // Restore horizontal scroll position
+  const newTableWrap = mount.querySelector(".matrix-table-wrap");
+  if (newTableWrap && prevScrollLeft > 0) {
+    newTableWrap.scrollLeft = prevScrollLeft;
+  }
+
+  // Smooth scroll to expanded feature and target model tab
+  if (store.expandedFeatureId) {
+    requestAnimationFrame(() => {
+      const expandedRow = mount.querySelector(`.feature-row[data-feature-id="${store.expandedFeatureId}"]`);
+      const drawerRow = mount.querySelector(`#drawer-${store.expandedFeatureId}`);
+
+      if (expandedRow) {
+        expandedRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      // If user clicked on a specific model cell, horizontally scroll to that model column
+      if (store.activeModelTarget && newTableWrap) {
+        const targetCell = expandedRow?.querySelector(`.td-model-cell[data-model-id="${store.activeModelTarget}"]`);
+        if (targetCell) {
+          const cellLeft = targetCell.offsetLeft;
+          const cellWidth = targetCell.offsetWidth;
+          const wrapWidth = newTableWrap.clientWidth;
+          const targetScroll = Math.max(0, cellLeft - 280 - (wrapWidth - 280 - cellWidth) / 2);
+          newTableWrap.scrollTo({ left: targetScroll, behavior: "smooth" });
+        }
+
+        // Also scroll to that model's parameter item inside the drawer
+        const targetParam = drawerRow?.querySelector(`#param-${store.expandedFeatureId}-${store.activeModelTarget}`);
+        if (targetParam) {
+          targetParam.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+    });
+  }
+
+  // Attach Row Expansion Handlers (detect if specific model cell was clicked)
   mount.querySelectorAll(".feature-row").forEach(row => {
-    row.addEventListener("click", () => {
+    row.addEventListener("click", (e) => {
       const fId = row.getAttribute("data-feature-id");
-      store.toggleExpandFeature(fId);
+      const modelCell = e.target.closest(".td-model-cell");
+      const modelId = modelCell ? modelCell.getAttribute("data-model-id") : null;
+      store.toggleExpandFeature(fId, modelId);
     });
   });
 

@@ -40,8 +40,9 @@ export function renderFeatureDrawer(feature, models = [], store) {
                 ${models.map(m => {
                   const s = support[m.id];
                   if (!s || s.status === "unsupported") return "";
+                  const isTargeted = store.activeModelTarget === m.id;
                   return `
-                    <div class="sdk-param-item">
+                    <div class="sdk-param-item ${isTargeted ? "active-model-target" : ""}" id="param-${feature.id}-${m.id}" data-model-id="${m.id}">
                       <div class="sdk-param-header">
                         <span class="sdk-model-title">${m.name} (${m.providerName})</span>
                         <span class="status-badge ${s.status}" style="font-size: 0.68rem; padding: 2px 6px;">${s.label}</span>
@@ -59,7 +60,7 @@ export function renderFeatureDrawer(feature, models = [], store) {
               <div style="font-size: 0.78rem; font-weight: 750; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">
                 Ready-To-Run Implementation Snippet
               </div>
-              ${renderCodeViewer(feature.codeExamples || {}, store)}
+              ${renderCodeViewer(feature.codeExamples || {}, store, feature.id)}
             </div>
           </div>
         </div>
