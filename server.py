@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CanIUse.ai - Zero-Dependency Local Dev Server
+CanIUseAI - Zero-Dependency Local Dev Server
 Serves static files with correct MIME types and no-cache headers.
 """
 import http.server
@@ -22,7 +22,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"\n⚡ [CanIUse.ai] Serving at http://localhost:{PORT}")
+        print(f"\n⚡ [CanIUseAI] Serving at http://localhost:{PORT}")
         print(f"📁 Root directory: {DIRECTORY}\n")
         try:
             httpd.serve_forever()

@@ -1,4 +1,4 @@
-# CanIUse.ai ⚡
+# CanIUseAI ⚡
 
 The **[caniuse.com](https://caniuse.com)** for AI models & SDKs.
 

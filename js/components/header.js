@@ -49,11 +49,11 @@ export function renderHeader(store) {
     <header class="site-header">
       <div class="container site-header-inner">
         <div class="brand-group">
-          <div class="brand-logo-wrap" title="CanIUse.ai">
-            ${icons.cpu(22)}
+          <div class="brand-logo-wrap" title="CanIUseAI">
+            ${icons.logo(38)}
           </div>
           <div class="brand-text">
-            <span class="brand-title">CanIUse.ai</span>
+            <span class="brand-title">CanIUseAI</span>
             <span class="brand-subtitle">AI Model &amp; SDK Capability Matrix</span>
           </div>
         </div>
