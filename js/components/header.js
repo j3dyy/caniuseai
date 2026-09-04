@@ -91,7 +91,7 @@ export function renderHeader(store) {
             ${isDark ? icons.sun(18) : icons.moon(18)}
           </button>
 
-          <a href="https://github.com" target="_blank" rel="noopener" class="icon-btn" title="Contribute on GitHub">
+          <a href="https://github.com/j3dyy/caniuseai" target="_blank" rel="noopener" class="icon-btn" title="Contribute on GitHub">
             ${icons.code(18)}
           </a>
         </div>
