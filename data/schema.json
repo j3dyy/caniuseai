@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CanIUseAI_CapabilitiesSchema",
+  "type": "object",
+  "required": [
+    "version",
+    "lastUpdated",
+    "categories",
+    "models",
+    "features"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array"
+    },
+    "models": {
+      "type": "array"
+    },
+    "features": {
+      "type": "array"
+    }
+  }
+}
