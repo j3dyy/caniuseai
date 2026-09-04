@@ -14,7 +14,6 @@ export class StateStore {
     // Model Diff Mode state (supports 2 or 3 models dynamically)
     this.diffOpen = false;
     this.diffModels = ["gpt-4o", "claude-3-5-sonnet"];
-    this.diffOnlyChanges = false;
 
     this.listeners = [];
   }
@@ -169,11 +168,6 @@ export class StateStore {
       this.diffModels.splice(index, 1);
       this.notify();
     }
-  }
-
-  toggleDiffOnlyChanges() {
-    this.diffOnlyChanges = !this.diffOnlyChanges;
-    this.notify();
   }
 
   getFilteredFeatures() {

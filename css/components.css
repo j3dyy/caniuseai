@@ -856,34 +856,6 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-top: 2px;
 }
 
-.diff-toggle-changes-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 0.76rem;
-  font-weight: 700;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.diff-toggle-changes-btn:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--accent-cyan);
-  color: var(--text-primary);
-}
-
-.diff-toggle-changes-btn.active {
-  background: rgba(56, 189, 248, 0.14);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
-}
-
 .diff-selectors-row {
   display: flex;
   align-items: flex-end;

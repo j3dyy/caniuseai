@@ -32,14 +32,6 @@ export function renderModelDiff(store) {
 
   const allFeatures = data.features || [];
 
-  // Filter features if diffOnlyChanges is toggled
-  const displayedFeatures = store.diffOnlyChanges
-    ? allFeatures.filter(f => {
-        const statuses = selectedModels.map(m => (f.support ? f.support[m.id]?.status : null));
-        return !statuses.every(s => s === statuses[0]);
-      })
-    : allFeatures;
-
   // Preserve scroll position if re-rendering while open
   const prevScrollTop = modalMount.querySelector(".diff-body")?.scrollTop || 0;
 
@@ -55,19 +47,13 @@ export function renderModelDiff(store) {
             <div>
               <h2 class="diff-modal-title">Side-by-Side Capability Diff</h2>
               <div class="diff-modal-subtitle">
-                Comparing ${selectedModels.length} models across ${displayedFeatures.length} capabilities
+                Comparing ${selectedModels.length} models across ${allFeatures.length} capabilities
               </div>
             </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <button class="diff-toggle-changes-btn ${store.diffOnlyChanges ? "active" : ""}" id="btn-toggle-changes" title="Show only capabilities where model support differs">
-              ${icons.sliders(13)}
-              <span>${store.diffOnlyChanges ? "Showing Differences" : "Differences Only"}</span>
-            </button>
-            <button class="icon-btn" id="btn-close-diff" title="Close modal (Esc)">
-              ${icons.x(16)}
-            </button>
-          </div>
+          <button class="icon-btn" id="btn-close-diff" title="Close modal (Esc)">
+            ${icons.x(16)}
+          </button>
         </div>
 
         <!-- Dynamic Selectors Row -->
@@ -142,11 +128,7 @@ export function renderModelDiff(store) {
             </div>
 
             <!-- Table Rows -->
-            ${displayedFeatures.length === 0 ? `
-              <div class="diff-empty-state">
-                <p>No capability differences found between the selected models.</p>
-              </div>
-            ` : displayedFeatures.map(f => {
+            ${allFeatures.map(f => {
               const supports = selectedModels.map(m => (f.support ? f.support[m.id] : null));
               const statuses = supports.map(s => s?.status);
               const isDiff = !statuses.every(s => s === statuses[0]);
@@ -205,10 +187,5 @@ export function renderModelDiff(store) {
   // Remove 3rd model button
   document.getElementById("btn-remove-model-c")?.addEventListener("click", () => {
     store.removeDiffModel(2);
-  });
-
-  // Differences only toggle
-  document.getElementById("btn-toggle-changes")?.addEventListener("click", () => {
-    store.toggleDiffOnlyChanges();
   });
 }
