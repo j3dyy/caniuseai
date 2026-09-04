@@ -7,26 +7,42 @@ export const icons = {
       <defs>
         <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#0f172a" />
-          <stop offset="100%" stop-color="#090d16" />
+          <stop offset="100%" stop-color="#070a12" />
         </linearGradient>
-        <linearGradient id="logoGlyphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="tileGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#059669" />
+        </linearGradient>
+        <linearGradient id="tileGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#38bdf8" />
-          <stop offset="45%" stop-color="#818cf8" />
-          <stop offset="100%" stop-color="#c084fc" />
+          <stop offset="100%" stop-color="#0284c7" />
         </linearGradient>
-        <linearGradient id="logoSparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="tileGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#818cf8" />
+          <stop offset="100%" stop-color="#4f46e5" />
+        </linearGradient>
+        <linearGradient id="tileGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#c084fc" />
+          <stop offset="100%" stop-color="#9333ea" />
+        </linearGradient>
+        <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#22d3ee" />
           <stop offset="100%" stop-color="#38bdf8" />
         </linearGradient>
         <filter id="logoGlowEffect" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#06b6d4" flood-opacity="0.45" />
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#38bdf8" flood-opacity="0.4" />
         </filter>
       </defs>
       <rect width="48" height="48" rx="12" fill="url(#logoBgGrad)" />
-      <rect x="1" y="1" width="46" height="46" rx="11" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
-      <path d="M33 13.8C30.4 11.6 27 10.4 23.4 10.4C15.9 10.4 9.8 16.5 9.8 24C9.8 31.5 15.9 37.6 23.4 37.6C27.2 37.6 30.6 36.1 33.2 33.8L28.8 29.2C27.4 30.4 25.5 31.2 23.4 31.2C19.4 31.2 16.2 28 16.2 24C16.2 20 19.4 16.8 23.4 16.8C25.3 16.8 27.1 17.5 28.5 18.6L33 13.8Z" fill="url(#logoGlyphGrad)" filter="url(#logoGlowEffect)" />
-      <path d="M33 17.5C33 21.8 35 24 39.5 24C35 24 33 26.2 33 30.5C33 26.2 31 24 26.5 24C31 24 33 21.8 33 17.5Z" fill="url(#logoSparkGrad)" />
-      <circle cx="33" cy="24" r="1.6" fill="#ffffff" />
+      <rect x="1" y="1" width="46" height="46" rx="11" stroke="rgba(56, 189, 248, 0.28)" stroke-width="1.5" />
+      <g filter="url(#logoGlowEffect)">
+        <rect x="10.5" y="10.5" width="11.5" height="11.5" rx="4" fill="url(#tileGrad1)" />
+        <rect x="26" y="10.5" width="11.5" height="11.5" rx="4" fill="url(#tileGrad2)" />
+        <rect x="10.5" y="26" width="11.5" height="11.5" rx="4" fill="url(#tileGrad3)" />
+        <rect x="26" y="26" width="11.5" height="11.5" rx="4" fill="url(#tileGrad4)" />
+        <path d="M24 16C24 21.5 21.5 24 16 24C21.5 24 24 26.5 24 32C24 26.5 26.5 24 32 24C26.5 24 24 21.5 24 16Z" fill="url(#sparkGrad)" />
+        <circle cx="24" cy="24" r="1.8" fill="#ffffff" />
+      </g>
     </svg>
   `,
   cpu: (size = 16, cls = "") => `
