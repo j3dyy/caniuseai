@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CanIUse.ai - Automated Synthetic Capability Prober
+CanAI - Automated Synthetic Capability Prober
 Verifies model parameter support and stamps last_verified timestamps in data/capabilities.json.
 """
 import os
@@ -12,7 +12,7 @@ DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 
 def probe_all(dry_run=True):
     print("=" * 60)
-    print(" CanIUse.ai - Synthetic Parameter & Capability Prober")
+    print(" CanAI - Synthetic Parameter & Capability Prober")
     print("=" * 60)
 
     if not os.path.exists(DATA_PATH):

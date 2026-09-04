@@ -1,6 +1,5 @@
-# CanIUseAI ⚡
-
-The **[caniuse.com](https://caniuse.com)** for AI models & SDKs.
+# CanAI ⚡
+> **[canai.usectl.com](https://canai.usectl.com)** &bull; The **[caniuse.com](https://caniuse.com)** for AI models & SDKs.
 
 Instantly answers: **"Can this model do X, and what is the exact SDK parameter?"** across OpenAI, Anthropic Claude, Google Gemini, DeepSeek, and Groq.
 
@@ -12,8 +11,8 @@ Instantly answers: **"Can this model do X, and what is the exact SDK parameter?"
 - **Prompt Caching Economics**: Compare minimum tokens (1,024 vs 32,768), write penalties (1.25x vs 1.0x), and read discounts (50% to 90%).
 - **Reasoning Budgets**: Exact parameter syntax for reasoning tokens (`budget_tokens` vs `reasoning_effort`).
 - **Multimodal Audio/Video/PDF**: Which models natively accept raw audio/video vs requiring Whisper/OCR pipelines.
-- **1-Click Ready-to-Run Code**: Copy production Python (`google-genai`, `openai`, `anthropic`) and TypeScript snippets.
-- **Side-by-Side Model Diff**: Compare any two models (e.g. `GPT-4o` vs `Claude 3.5 Sonnet`) in a clean side-by-side diff table.
+- **1-Click Ready-to-Run Code**: Copy production Python (`google-genai`, `openai`, `anthropic`, `php`, `go`) and TypeScript snippets.
+- **Side-by-Side Model Diff**: Compare up to 3 models (e.g. `GPT-4o` vs `Claude 3.5 Sonnet` vs `Gemini 2.0 Flash`) in a clean comparison table.
 - **Fast & Zero Friction**: No signup, no auth, loads in <250ms, 100% responsive, dark mode by default with keyboard navigation (`/`, `Esc`, `C`).
 
 ---
@@ -28,10 +27,10 @@ python3 server.py
 ### Option 2: Docker
 ```bash
 # Build the Docker image
-docker build -t caniuseai .
+docker build -t canai .
 
 # Run container
-docker run -d -p 8081:8081 --name caniuseai caniuseai
+docker run -d -p 8081:8081 --name canai canai
 ```
 
 Open **http://localhost:8081** in your browser.
