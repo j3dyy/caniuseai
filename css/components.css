@@ -217,7 +217,8 @@ input[type="search"]::-webkit-search-results-decoration {
    Hero & Quick Category Navigation Pills
    -------------------------------------------------------------------------- */
 .hero-radar-strip {
-  padding: 28px 0 16px;
+  padding-top: 28px;
+  padding-bottom: 20px;
 }
 
 .hero-stats-row {
