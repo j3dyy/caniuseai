@@ -14,7 +14,7 @@ export function renderFeatureDrawer(feature, models = [], store) {
         <div class="drawer-content">
           <div class="drawer-grid">
             <!-- Left: Gotchas & Model Parameter Breakdown -->
-            <div>
+            <div class="drawer-left-col">
               <h3 class="drawer-title">
                 ${icons.cpu(18)}
                 <span>${feature.name}</span>
@@ -56,7 +56,7 @@ export function renderFeatureDrawer(feature, models = [], store) {
             </div>
 
             <!-- Right: Ready-to-Run Code Example -->
-            <div>
+            <div class="drawer-code-col">
               <div style="font-size: 0.78rem; font-weight: 750; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">
                 Ready-To-Run Implementation Snippet
               </div>
