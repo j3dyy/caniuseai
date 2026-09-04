@@ -1,0 +1,29 @@
+# CanAI (canai.usectl.com)
+
+> CanAI is the open capability matrix and SDK compatibility tracker for AI models and developer APIs.
+> It provides instant, live-verified answers to: "Can model X do Y, and what is the exact parameter syntax?"
+
+## Quick Links
+- Canonical Website: https://canai.usectl.com
+- Full Machine-Readable Markdown: https://canai.usectl.com/llms-full.txt
+- Structured JSON Dataset: https://canai.usectl.com/data/capabilities.json
+- GitHub Repository: https://github.com/j3dyy/caniuseai
+- Parent Ecosystem: https://usectl.com
+
+## Tracked Providers & Models
+- **OpenAI**: GPT-4o (128k context), GPT-4o-mini (128k context), o3-mini (200k context)
+- **Anthropic**: Claude 3.5 Sonnet (200k context), Claude 3.5 Haiku (200k context)
+- **Google**: Gemini 2.0 Flash (1,048,576 tokens), Gemini 1.5 Pro (2,097,152 tokens)
+- **DeepSeek**: DeepSeek-V3 (64k context), DeepSeek-R1 (64k context)
+- **Meta / Groq**: Llama 3.3 70B Versatile (128k context)
+
+## Core Capability Matrix
+- **Strict JSON Schema**: Grammatical CFG-constrained decoding (`response_format: { type: 'json_schema', strict: true }` in OpenAI vs `response_schema` in Gemini vs tool-calling fallback in Claude).
+- **Prompt Caching**: Comparison of minimum token thresholds (1,024 for Claude, 32,768 for Gemini, 1,024 for OpenAI, 64 for DeepSeek) and discounts (50% to 90%).
+- **Reasoning Token Budgets**: Syntax differences (`reasoning_effort: "low"|"medium"|"high"` in OpenAI o-series vs `thinking: { type: "enabled", budget_tokens: N }` in Anthropic).
+- **Native Multimodal Audio & PDF**: Direct audio byte ingestion (`input_audio`) and native visual PDF layout parsing vs OCR/Whisper extractors.
+- **Agentic Code Execution**: Built-in Python sandbox interpreters (`code_execution` in Gemini, Assistants API in OpenAI).
+
+## Complete API & Parameter Access
+For direct machine-readable ingestion of all parameters, types, and code snippets across Python, TypeScript, PHP, and Go, use:
+- https://canai.usectl.com/data/capabilities.json

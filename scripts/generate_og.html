@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CanAI OG Card</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #070a13;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 72px;
+      position: relative;
+    }
+
+    /* Ambient Glows */
+    .glow-cyan {
+      position: absolute;
+      top: -100px;
+      right: -80px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(56, 189, 248, 0) 70%);
+      pointer-events: none;
+    }
+    .glow-indigo {
+      position: absolute;
+      bottom: -120px;
+      left: 100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, rgba(129, 140, 248, 0) 70%);
+      pointer-events: none;
+    }
+
+    /* Grid background effect */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand-title {
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .domain-tag {
+      font-size: 20px;
+      font-weight: 600;
+      color: #64748b;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .domain-highlight {
+      color: #38bdf8;
+    }
+
+    /* Main Hero Area */
+    .hero-content {
+      z-index: 10;
+      margin-top: 10px;
+    }
+    .headline {
+      font-size: 56px;
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: #f1f5f9;
+      max-width: 980px;
+    }
+    .headline span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 60%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subhead {
+      margin-top: 16px;
+      font-size: 23px;
+      color: #94a3b8;
+      line-height: 1.4;
+      max-width: 900px;
+      font-weight: 400;
+    }
+
+    /* Feature Pills */
+    .feature-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      z-index: 10;
+    }
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .pill-icon {
+      color: #38bdf8;
+      font-size: 18px;
+    }
+
+    /* Footer: Supported Models */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      z-index: 10;
+    }
+    .models-label {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .models-list {
+      display: flex;
+      gap: 12px;
+    }
+    .model-chip {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-cyan"></div>
+  <div class="glow-indigo"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <svg width="58" height="58" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f172a" />
+            <stop offset="100%" stop-color="#070a12" />
+          </linearGradient>
+          <linearGradient id="tileGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10b981" />
+            <stop offset="100%" stop-color="#059669" />
+          </linearGradient>
+          <linearGradient id="tileGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#38bdf8" />
+            <stop offset="100%" stop-color="#0284c7" />
+          </linearGradient>
+          <linearGradient id="tileGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#818cf8" />
+            <stop offset="100%" stop-color="#4f46e5" />
+          </linearGradient>
+          <linearGradient id="tileGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#c084fc" />
+            <stop offset="100%" stop-color="#9333ea" />
+          </linearGradient>
+          <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#22d3ee" />
+            <stop offset="100%" stop-color="#38bdf8" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="12" fill="url(#logoBgGrad)" />
+        <rect x="1" y="1" width="46" height="46" rx="11" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" />
+        <rect x="10.5" y="10.5" width="11.5" height="11.5" rx="4" fill="url(#tileGrad1)" />
+        <rect x="26" y="10.5" width="11.5" height="11.5" rx="4" fill="url(#tileGrad2)" />
+        <rect x="10.5" y="26" width="11.5" height="11.5" rx="4" fill="url(#tileGrad3)" />
+        <rect x="26" y="26" width="11.5" height="11.5" rx="4" fill="url(#tileGrad4)" />
+        <path d="M24 16C24 21.5 21.5 24 16 24C21.5 24 24 26.5 24 32C24 26.5 26.5 24 32 24C26.5 24 24 21.5 24 16Z" fill="url(#sparkGrad)" />
+        <circle cx="24" cy="24" r="1.8" fill="#ffffff" />
+      </svg>
+      <div>
+        <span class="brand-title">CanAI</span>
+      </div>
+      <div class="brand-badge">⚡ Live Capability Radar</div>
+    </div>
+    <div class="domain-tag">
+      <span class="domain-highlight">canai</span>.usectl.com
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1 class="headline">
+      The <span>caniuse.com</span> for AI Models &amp; SDKs.
+    </h1>
+    <p class="subhead">
+      Instantly check strict JSON schema enforcement, prompt caching economics, reasoning budgets, and exact SDK parameter syntax across top LLM providers.
+    </p>
+
+    <!-- Feature Strip -->
+    <div class="feature-strip">
+      <div class="pill"><span class="pill-icon">✓</span> Strict JSON Schemas</div>
+      <div class="pill"><span class="pill-icon">⚡</span> Prompt Caching (50-90% Off)</div>
+      <div class="pill"><span class="pill-icon">🧠</span> Reasoning Token Budgets</div>
+      <div class="pill"><span class="pill-icon">🎙️</span> Native Audio &amp; Multimodal</div>
+      <div class="pill"><span class="pill-icon">↔️</span> Side-by-Side Model Diff</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="models-label">Verified Across 10 Models</span>
+    <div class="models-list">
+      <div class="model-chip">GPT-4o</div>
+      <div class="model-chip">Claude 3.5 Sonnet</div>
+      <div class="model-chip">Gemini 2.0 Flash</div>
+      <div class="model-chip">DeepSeek-V3</div>
+      <div class="model-chip">Llama 3.3 (Groq)</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# CanAI (canai.usectl.com) - Robots & AI Discovery Policy
+# LLM Manifest: https://canai.usectl.com/llms.txt
+# Machine Data: https://canai.usectl.com/data/capabilities.json
+
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI agents, search engines, and indexers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+Sitemap: https://canai.usectl.com/sitemap.xml

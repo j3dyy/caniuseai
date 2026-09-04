@@ -1,0 +1,182 @@
+# CanAI — Complete AI Model & SDK Compatibility Reference
+> Source: https://canai.usectl.com | Dataset: https://canai.usectl.com/data/capabilities.json
+> Last Updated: 2026-09-04T18:30:00Z
+
+## 1. Models & Context Specifications
+
+| Model | Provider | Context Window | Max Output | Input Price / 1M | Output Price / 1M | Cached Read |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **GPT-4o** | OpenAI | 128k | 16,384 | $2.50 / 1M | $10.00 / 1M | $1.25 / 1M (-50%) |
+| **GPT-4o-mini** | OpenAI | 128k | 16,384 | $0.15 / 1M | $0.60 / 1M | $0.075 / 1M (-50%) |
+| **o3-mini** | OpenAI | 200k | 100,000 | $1.10 / 1M | $4.40 / 1M | $0.55 / 1M (-50%) |
+| **Claude 3.5 Sonnet** | Anthropic | 200k | 8,192 | $3.00 / 1M | $15.00 / 1M | $0.30 / 1M (-90%) |
+| **Claude 3.5 Haiku** | Anthropic | 200k | 8,192 | $0.80 / 1M | $4.00 / 1M | $0.08 / 1M (-90%) |
+| **Gemini 2.0 Flash** | Google | 1,048,576 | 8,192 | $0.10 / 1M | $0.40 / 1M | $0.025 / 1M (-75%) |
+| **Gemini 1.5 Pro** | Google | 2,097,152 | 8,192 | $1.25 / 1M | $5.00 / 1M | $0.31 / 1M (-75%) |
+| **DeepSeek-V3** | DeepSeek | 64k | 8,192 | $0.14 / 1M | $0.28 / 1M | $0.014 / 1M (-90%) |
+| **DeepSeek-R1** | DeepSeek | 64k | 8,192 | $0.55 / 1M | $2.19 / 1M | $0.14 / 1M (-75%) |
+| **Llama 3.3 70B (Groq)** | Groq / Meta | 128k | 8,192 | $0.59 / 1M | $0.79 / 1M | N/A |
+
+---
+
+## 2. Capabilities Matrix & Exact SDK Parameters
+
+### Strict JSON Schema Enforcement
+**ID**: `strict-json-schema` | **Category**: structured-outputs
+
+
+#### Model Support Breakdown:
+- ❌ **GPT-4o**: **Native Strict** (`native`) — *100% adherence. All object keys must be marked required.*
+- ❌ **GPT-4o-mini**: **Native Strict** (`native`) — *Fastest and cheapest strict schema validation.*
+- ❌ **o3-mini**: **Native Strict** (`native`) — *Generates internal reasoning first, then emits strictly validated JSON.*
+- ⚠️ **Claude 3.5 Sonnet**: **Tool Choice Hack** (`partial`) — *No native response_format. Must define schema as a tool and force its invocation.*
+- ⚠️ **Claude 3.5 Haiku**: **Tool Choice Hack** (`partial`) — *High schema fidelity, but consumes tool token overhead.*
+- ❌ **Gemini 2.0 Flash**: **Native Schema** (`native`) — *Native Pydantic or JSON schema validation at 120+ T/s.*
+- ❌ **Gemini 1.5 Pro**: **Native Schema** (`native`) — *Works across massive context windows (up to 2M tokens).*
+- ⚠️ **DeepSeek-V3**: **Standard JSON** (`partial`) — *Guarantees valid JSON syntax, but does not strictly validate keys against a schema.*
+- ⚠️ **DeepSeek-R1**: **Prompt Constrained** (`partial`) — *Thinking tokens precede the output; strict JSON mode is officially unsupported.*
+- ❌ **Llama 3.3 70B (Groq)**: **Native Strict (Groq)** (`native`) — *Groq supports CFG/grammar constrained decoding natively.*
+
+#### Implementation Details:
+
+---
+
+### Prefix Prompt Caching
+**ID**: `prompt-caching` | **Category**: caching-efficiency
+
+
+#### Model Support Breakdown:
+- ❌ **GPT-4o**: **Auto Prefix (50%)** (`native`) — *No special headers required. 50% discount on cached reads.*
+- ❌ **GPT-4o-mini**: **Auto Prefix (50%)** (`native`) — *Reduces already low $0.15/M price to $0.075/M.*
+- ❌ **o3-mini**: **Auto Prefix (50%)** (`native`) — *Caches system prompts and tool declarations across reasoning turns.*
+- ❌ **Claude 3.5 Sonnet**: **Explicit 90% Off** (`superpower`) — *1.25x write cost; 90% discount on reads ($0.30/M). Min 1,024 tokens. 5m TTL.*
+- ❌ **Claude 3.5 Haiku**: **Explicit 90% Off** (`superpower`) — *Drops input tokens to an astonishing $0.08/M on cached hits.*
+- ❌ **Gemini 2.0 Flash**: **Explicit (32k min)** (`native`) — *75% read discount ($0.025/M). Requires min 32,768 tokens. Hourly storage fee.*
+- ❌ **Gemini 1.5 Pro**: **2M Cache King** (`superpower`) — *Cache entire codebases or hours of video. $4.50/M tokens/hr storage fee.*
+- ❌ **DeepSeek-V3**: **64-Tok Chunks (90%)** (`superpower`) — *Fine-grained 64-token chunking. $0.014/M cached read (cheapest on Earth).*
+- ❌ **DeepSeek-R1**: **Auto Prefix (75%)** (`superpower`) — *Caches reasoning system contexts automatically.*
+- ❌ **Llama 3.3 70B (Groq)**: **Unsupported** (`unsupported`) — *Groq LPUs re-compute KV caches at wire speed without stateful caching.*
+
+#### Implementation Details:
+
+---
+
+### Configurable Thinking / Reasoning Budget
+**ID**: `thinking-budget` | **Category**: reasoning-agents
+
+
+#### Model Support Breakdown:
+- ❌ **GPT-4o**: **No Thinking** (`unsupported`) — *Standard autoregressive model without internal CoT.*
+- ❌ **GPT-4o-mini**: **No Thinking** (`unsupported`) — *Direct response model.*
+- ❌ **o3-mini**: **Reasoning Effort** (`native`) — *Selectable effort levels. Does not allow exact token counts.*
+- ❌ **Claude 3.5 Sonnet**: **Exact Token Budget** (`native`) — *Fine-grained control. Minimum 1,024 budget tokens required.*
+- ❌ **Claude 3.5 Haiku**: **No Thinking** (`unsupported`) — *Designed for pure speed without reasoning latency.*
+- ❌ **Gemini 2.0 Flash**: **Thinking Budget** (`native`) — *Adjustable thinking budget or set to 0 to disable thinking entirely.*
+- ❌ **Gemini 1.5 Pro**: **No Thinking** (`unsupported`) — *Pre-reasoning era architecture.*
+- ❌ **DeepSeek-V3**: **No Thinking** (`unsupported`) — *Base non-reasoning MoE model.*
+- ❌ **DeepSeek-R1**: **Always-On CoT** (`native`) — *Self-determines thinking length. Thinking tokens billed at output rate.*
+- ❌ **Llama 3.3 70B (Groq)**: **No Thinking** (`unsupported`) — *Standard instruction-tuned model.*
+
+#### Implementation Details:
+
+---
+
+### Native Audio Input & Speech Perception
+**ID**: `native-audio-input` | **Category**: multimodal
+
+
+#### Model Support Breakdown:
+- ❌ **GPT-4o**: **Native Audio In** (`native`) — *Requires audio input parameter. $100/1M audio tokens.*
+- ❌ **GPT-4o-mini**: **Native Audio In** (`native`) — *Ultra-affordable audio processing ($10/1M audio tokens).*
+- ❌ **o3-mini**: **Text Only** (`unsupported`) — *Text and code reasoning only.*
+- ❌ **Claude 3.5 Sonnet**: **Requires Whisper** (`unsupported`) — *No native audio input. Transcribe first.*
+- ❌ **Claude 3.5 Haiku**: **Requires Whisper** (`unsupported`) — *Text and image only.*
+- ❌ **Gemini 2.0 Flash**: **Native Audio/Live** (`superpower`) — *Lowest latency audio understanding. Supports full hours of audio or live streams.*
+- ❌ **Gemini 1.5 Pro**: **Up to 9.5 Hours** (`native`) — *Upload multi-hour podcast or meeting recordings directly.*
+- ❌ **DeepSeek-V3**: **Text Only** (`unsupported`) — *Text only.*
+- ❌ **DeepSeek-R1**: **Text Only** (`unsupported`) — *Text only reasoning.*
+- ❌ **Llama 3.3 70B (Groq)**: **Text Only** (`unsupported`) — *Text only.*
+
+#### Implementation Details:
+
+---
+
+### Native PDF Document & Layout Understanding
+**ID**: `native-pdf-understanding` | **Category**: multimodal
+
+
+#### Model Support Breakdown:
+- ⚠️ **GPT-4o**: **Via Assistant API** (`partial`) — *Chat completions API lacks direct PDF upload; requires rasterizing pages as images.*
+- ⚠️ **GPT-4o-mini**: **Via Assistant API** (`partial`) — *Same as GPT-4o.*
+- ❌ **o3-mini**: **Text Only** (`unsupported`) — *Does not accept PDF or image inputs.*
+- ❌ **Claude 3.5 Sonnet**: **Native Visual PDF** (`superpower`) — *Preserves tables, graphs, and formatting. Up to 32MB / 100 pages.*
+- ❌ **Claude 3.5 Haiku**: **Native Visual PDF** (`native`) — *Rapid document parsing.*
+- ❌ **Gemini 2.0 Flash**: **Native Multi-Page** (`superpower`) — *Direct PDF upload. Super-fast extraction.*
+- ❌ **Gemini 1.5 Pro**: **1,000+ Pages** (`superpower`) — *Ingest entire textbooks, legal filings, or annual reports.*
+- ❌ **DeepSeek-V3**: **Text Only** (`unsupported`) — *Must extract text using pdfplumber/tesseract first.*
+- ❌ **DeepSeek-R1**: **Text Only** (`unsupported`) — *Text only.*
+- ❌ **Llama 3.3 70B (Groq)**: **Text Only** (`unsupported`) — *Text only.*
+
+#### Implementation Details:
+
+---
+
+### Native Sandboxed Code Execution
+**ID**: `code-execution` | **Category**: reasoning-agents
+
+
+#### Model Support Breakdown:
+- ⚠️ **GPT-4o**: **Via Assistant API** (`partial`) — *Not supported in raw Chat Completions endpoint. $0.03/session fee.*
+- ⚠️ **GPT-4o-mini**: **Via Assistant API** (`partial`) — *Requires Assistants API.*
+- ❌ **o3-mini**: **No Sandbox** (`unsupported`) — *Generates code text but cannot execute it in-turn.*
+- ❌ **Claude 3.5 Sonnet**: **External Runner** (`unsupported`) — *API emits tool call; developer must host the execution environment.*
+- ❌ **Claude 3.5 Haiku**: **External Runner** (`unsupported`) — *No native sandbox.*
+- ❌ **Gemini 2.0 Flash**: **Free Native Sandbox** (`superpower`) — *Iteratively writes, runs, and inspects Python output inside the call at $0 extra.*
+- ❌ **Gemini 1.5 Pro**: **Free Native Sandbox** (`superpower`) — *Solves math, complex statistical analysis, and data cleaning in-flight.*
+- ❌ **DeepSeek-V3**: **No Sandbox** (`unsupported`) — *Emits code blocks only.*
+- ❌ **DeepSeek-R1**: **No Sandbox** (`unsupported`) — *Reasons about code, but cannot execute.*
+- ❌ **Llama 3.3 70B (Groq)**: **No Sandbox** (`unsupported`) — *Requires external sandbox.*
+
+#### Implementation Details:
+
+---
+
+### Live Search Grounding & Web Retrieval
+**ID**: `search-grounding` | **Category**: reasoning-agents
+
+
+#### Model Support Breakdown:
+- ⚠️ **GPT-4o**: **Responses API** (`partial`) — *Available in beta on select endpoints.*
+- ⚠️ **GPT-4o-mini**: **Responses API** (`partial`) — *Search preview support.*
+- ❌ **o3-mini**: **No Search** (`unsupported`) — *Frozen training data only.*
+- ❌ **Claude 3.5 Sonnet**: **Requires Tavily/Exa** (`unsupported`) — *No native search. Must integrate external search API via tools.*
+- ❌ **Claude 3.5 Haiku**: **Requires Tavily/Exa** (`unsupported`) — *No native search.*
+- ❌ **Gemini 2.0 Flash**: **Native Google Search** (`superpower`) — *Instant Google Search results with citation URLs and searchEntryPoint html.*
+- ❌ **Gemini 1.5 Pro**: **Native Google Search** (`superpower`) — *Google Search grounding across complex research queries.*
+- ❌ **DeepSeek-V3**: **No Search** (`unsupported`) — *Requires external tool search.*
+- ❌ **DeepSeek-R1**: **No Search** (`unsupported`) — *Pure latent CoT; no live web browsing.*
+- ❌ **Llama 3.3 70B (Groq)**: **No Search** (`unsupported`) — *No native search.*
+
+#### Implementation Details:
+
+---
+
+### 1M+ Massive Context Window
+**ID**: `context-window-1m` | **Category**: limits-throughput
+
+
+#### Model Support Breakdown:
+- ❌ **GPT-4o**: **128k Tokens** (`unsupported`) — *Capped at 128k.*
+- ❌ **GPT-4o-mini**: **128k Tokens** (`unsupported`) — *Capped at 128k.*
+- ❌ **o3-mini**: **200k Tokens** (`unsupported`) — *Capped at 200k.*
+- ❌ **Claude 3.5 Sonnet**: **200k Tokens** (`unsupported`) — *Capped at 200k.*
+- ❌ **Claude 3.5 Haiku**: **200k Tokens** (`unsupported`) — *Capped at 200k.*
+- ❌ **Gemini 2.0 Flash**: **1,048,576 Tokens** (`superpower`) — *1 Million tokens standard at $0.10/M tokens.*
+- ❌ **Gemini 1.5 Pro**: **2,097,152 Tokens** (`superpower`) — *Industry record 2 Million tokens context window.*
+- ❌ **DeepSeek-V3**: **64k Tokens** (`unsupported`) — *Capped at 64k.*
+- ❌ **DeepSeek-R1**: **64k Tokens** (`unsupported`) — *Capped at 64k.*
+- ❌ **Llama 3.3 70B (Groq)**: **128k Tokens** (`unsupported`) — *Capped at 128k.*
+
+#### Implementation Details:
+
+---
