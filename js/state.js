@@ -11,12 +11,40 @@ export class StateStore {
     this.theme = localStorage.getItem("caniuse_theme") || "dark";
     this.activeModelTarget = null;
     
-    // Model Diff Mode state
+    // Model Diff Mode state (supports 2 or 3 models dynamically)
     this.diffOpen = false;
-    this.diffModelA = "gpt-4o";
-    this.diffModelB = "claude-3-5-sonnet";
+    this.diffModels = ["gpt-4o", "claude-3-5-sonnet"];
+    this.diffOnlyChanges = false;
 
     this.listeners = [];
+  }
+
+  get diffModelA() {
+    return this.diffModels[0] || "gpt-4o";
+  }
+
+  set diffModelA(val) {
+    this.diffModels[0] = val;
+  }
+
+  get diffModelB() {
+    return this.diffModels[1] || "claude-3-5-sonnet";
+  }
+
+  set diffModelB(val) {
+    this.diffModels[1] = val;
+  }
+
+  get diffModelC() {
+    return this.diffModels[2] || null;
+  }
+
+  set diffModelC(val) {
+    if (val) {
+      this.diffModels[2] = val;
+    } else if (this.diffModels.length > 2) {
+      this.diffModels.splice(2, 1);
+    }
   }
 
   subscribe(listener) {
@@ -93,10 +121,13 @@ export class StateStore {
     this.notify();
   }
 
-  openDiffModal(modelA = null, modelB = null) {
+  openDiffModal(modelA = null, modelB = null, modelC = null) {
     this.diffOpen = true;
-    if (modelA) this.diffModelA = modelA;
-    if (modelB) this.diffModelB = modelB;
+    if (modelA) this.diffModels[0] = modelA;
+    if (modelB) this.diffModels[1] = modelB;
+    if (modelC) {
+      this.diffModels[2] = modelC;
+    }
     this.notify();
   }
 
@@ -105,9 +136,43 @@ export class StateStore {
     this.notify();
   }
 
-  setDiffModels(modelA, modelB) {
-    this.diffModelA = modelA;
-    this.diffModelB = modelB;
+  setDiffModels(modelA, modelB, modelC = null) {
+    if (modelC) {
+      this.diffModels = [modelA, modelB, modelC];
+    } else if (this.diffModels.length === 3) {
+      this.diffModels = [modelA, modelB, this.diffModels[2]];
+    } else {
+      this.diffModels = [modelA, modelB];
+    }
+    this.notify();
+  }
+
+  setDiffModelAt(index, modelId) {
+    if (index >= 0 && index < this.diffModels.length) {
+      this.diffModels[index] = modelId;
+      this.notify();
+    }
+  }
+
+  addDiffModel(modelId = null) {
+    if (this.diffModels.length >= 3) return;
+    if (!modelId && this.data && this.data.models) {
+      const unused = this.data.models.find(m => !this.diffModels.includes(m.id));
+      modelId = unused ? unused.id : this.data.models[0].id;
+    }
+    this.diffModels.push(modelId || "gemini-2.0-flash");
+    this.notify();
+  }
+
+  removeDiffModel(index = 2) {
+    if (this.diffModels.length > 2 && index >= 0 && index < this.diffModels.length) {
+      this.diffModels.splice(index, 1);
+      this.notify();
+    }
+  }
+
+  toggleDiffOnlyChanges() {
+    this.diffOnlyChanges = !this.diffOnlyChanges;
     this.notify();
   }
 
