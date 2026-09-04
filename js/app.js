@@ -51,4 +51,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Boot application
   await store.init();
+
+  // Check URL parameters for shareable battle links (e.g. ?battle=1&m1=claude-3-5-sonnet&m2=deepseek-v3)
+  const urlParams = new URLSearchParams(window.location.search);
+  const isBattle = urlParams.get("battle") === "1" || urlParams.has("m1");
+  if (isBattle) {
+    const m1 = urlParams.get("m1");
+    const m2 = urlParams.get("m2");
+    store.openDiffModal(m1 || undefined, m2 || undefined);
+    store.setDiffViewMode("battle");
+  }
 });

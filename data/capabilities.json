@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-09-04T18:30:00Z",
+  "lastUpdated": "2026-09-04T20:31:03Z",
   "categories": [
     {
       "id": "structured-outputs",
@@ -35,96 +35,68 @@
   ],
   "models": [
     {
-      "id": "gpt-4o",
-      "name": "GPT-4o",
-      "provider": "openai",
-      "providerName": "OpenAI",
-      "contextWindow": "128k",
-      "maxOutput": "16,384",
-      "badge": "Omni Flagship",
-      "pricing": {
-        "input": "$2.50 / 1M",
-        "output": "$10.00 / 1M",
-        "cachedInput": "$1.25 / 1M (-50%)"
-      }
-    },
-    {
-      "id": "gpt-4o-mini",
-      "name": "GPT-4o-mini",
-      "provider": "openai",
-      "providerName": "OpenAI",
-      "contextWindow": "128k",
-      "maxOutput": "16,384",
-      "badge": "Fast & Cheap",
-      "pricing": {
-        "input": "$0.15 / 1M",
-        "output": "$0.60 / 1M",
-        "cachedInput": "$0.075 / 1M (-50%)"
-      }
-    },
-    {
-      "id": "o3-mini",
-      "name": "o3-mini",
-      "provider": "openai",
-      "providerName": "OpenAI",
-      "contextWindow": "200k",
-      "maxOutput": "100,000",
-      "badge": "STEM Reasoning",
-      "pricing": {
-        "input": "$1.10 / 1M",
-        "output": "$4.40 / 1M",
-        "cachedInput": "$0.55 / 1M (-50%)"
-      }
-    },
-    {
-      "id": "claude-3-5-sonnet",
-      "name": "Claude 3.5 Sonnet",
+      "id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
       "provider": "anthropic",
       "providerName": "Anthropic",
-      "contextWindow": "200k",
-      "maxOutput": "8,192",
-      "badge": "Code Benchmark Leader",
+      "contextWindow": "1,000,000",
+      "maxOutput": "32,768",
+      "badge": "Reasoning Apex",
       "pricing": {
-        "input": "$3.00 / 1M",
-        "output": "$15.00 / 1M",
-        "cachedInput": "$0.30 / 1M (-90%)"
+        "input": "$10.00 / 1M",
+        "output": "$50.00 / 1M",
+        "cachedInput": "$2.50 / 1M (-75%)"
       }
     },
     {
-      "id": "claude-3-5-haiku",
-      "name": "Claude 3.5 Haiku",
-      "provider": "anthropic",
-      "providerName": "Anthropic",
-      "contextWindow": "200k",
-      "maxOutput": "8,192",
-      "badge": "Sub-Second Agent",
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "provider": "openai",
+      "providerName": "OpenAI",
+      "contextWindow": "500k",
+      "maxOutput": "32,768",
+      "badge": "Autonomous Agent",
       "pricing": {
-        "input": "$0.80 / 1M",
-        "output": "$4.00 / 1M",
-        "cachedInput": "$0.08 / 1M (-90%)"
+        "input": "$10.00 / 1M",
+        "output": "$50.00 / 1M",
+        "cachedInput": "$2.50 / 1M (-75%)"
       }
     },
     {
-      "id": "gemini-2-0-flash",
-      "name": "Gemini 2.0 Flash",
+      "id": "gemini-3-8-flash",
+      "name": "Gemini 3.8 Flash",
       "provider": "google",
       "providerName": "Google",
       "contextWindow": "1,048,576",
-      "maxOutput": "8,192",
-      "badge": "Realtime Multimodal",
+      "maxOutput": "65,536",
+      "badge": "Speed & Multimodal Flagship",
       "pricing": {
-        "input": "$0.10 / 1M",
-        "output": "$0.40 / 1M",
-        "cachedInput": "$0.025 / 1M (-75%)"
+        "input": "$0.75 / 1M",
+        "output": "$3.75 / 1M",
+        "cachedInput": "$0.075 / 1M (-90%)"
       }
     },
     {
-      "id": "gemini-1-5-pro",
-      "name": "Gemini 1.5 Pro",
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "provider": "anthropic",
+      "providerName": "Anthropic",
+      "contextWindow": "1,000,000",
+      "maxOutput": "16,384",
+      "badge": "Master Code Architect",
+      "pricing": {
+        "input": "$5.00 / 1M",
+        "output": "$25.00 / 1M",
+        "cachedInput": "$1.25 / 1M (-75%)"
+      }
+    },
+    {
+      "id": "gemini-2-5-pro",
+      "name": "Gemini 2.5 Pro",
       "provider": "google",
       "providerName": "Google",
       "contextWindow": "2,097,152",
-      "maxOutput": "8,192",
+      "maxOutput": "65,536",
       "badge": "2M Context King",
       "pricing": {
         "input": "$1.25 / 1M",
@@ -133,31 +105,59 @@
       }
     },
     {
-      "id": "deepseek-v3",
-      "name": "DeepSeek-V3",
-      "provider": "deepseek",
-      "providerName": "DeepSeek",
-      "contextWindow": "64k",
-      "maxOutput": "8,192",
-      "badge": "671B MoE Frontier",
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "provider": "openai",
+      "providerName": "OpenAI",
+      "contextWindow": "256k",
+      "maxOutput": "32,768",
+      "badge": "STEM Reasoner",
       "pricing": {
-        "input": "$0.14 / 1M",
-        "output": "$0.28 / 1M",
-        "cachedInput": "$0.014 / 1M (-90%)"
+        "input": "$4.00 / 1M",
+        "output": "$16.00 / 1M",
+        "cachedInput": "$1.00 / 1M (-75%)"
       }
     },
     {
-      "id": "deepseek-r1",
-      "name": "DeepSeek-R1",
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek-V4-Pro",
       "provider": "deepseek",
       "providerName": "DeepSeek",
-      "contextWindow": "64k",
-      "maxOutput": "8,192",
-      "badge": "Open Reasoning",
+      "contextWindow": "128k",
+      "maxOutput": "16,384",
+      "badge": "1.6T MoE Titan",
       "pricing": {
-        "input": "$0.55 / 1M",
-        "output": "$2.19 / 1M",
-        "cachedInput": "$0.14 / 1M (-75%)"
+        "input": "$0.27 / 1M",
+        "output": "$1.10 / 1M",
+        "cachedInput": "$0.07 / 1M (-90%)"
+      }
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "providerName": "Anthropic",
+      "contextWindow": "1,000,000",
+      "maxOutput": "16,384",
+      "badge": "Everyday Standard",
+      "pricing": {
+        "input": "$3.00 / 1M",
+        "output": "$15.00 / 1M",
+        "cachedInput": "$0.75 / 1M (-75%)"
+      }
+    },
+    {
+      "id": "gemini-2-5-flash",
+      "name": "Gemini 2.5 Flash",
+      "provider": "google",
+      "providerName": "Google",
+      "contextWindow": "1,048,576",
+      "maxOutput": "65,536",
+      "badge": "High-Volume Value",
+      "pricing": {
+        "input": "$0.15 / 1M",
+        "output": "$0.60 / 1M",
+        "cachedInput": "$0.0375 / 1M (-75%)"
       }
     },
     {
@@ -167,7 +167,7 @@
       "providerName": "Groq / Meta",
       "contextWindow": "128k",
       "maxOutput": "8,192",
-      "badge": "Ultra LPUs (300+ T/s)",
+      "badge": "300+ T/s Hardware LPU",
       "pricing": {
         "input": "$0.59 / 1M",
         "output": "$0.79 / 1M",
@@ -187,85 +187,85 @@
         "Gemini supports strict response_schema natively via 'response_mime_type: \"application/json\"' and 'response_schema'."
       ],
       "support": {
-        "gpt-4o": {
+        "claude-fable-5-1": {
+          "status": "native",
+          "label": "Adaptive Schema",
+          "sdkParam": "output_format: { type: 'json_schema', schema: ... }",
+          "notes": "Adaptive grammar sampling; eliminates malformed JSON across complex reasoning chains.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-6-astra": {
           "status": "native",
           "label": "Native Strict",
-          "sdkParam": "response_format: { type: 'json_schema', json_schema: { strict: true, schema: ... } }",
-          "notes": "100% adherence. All object keys must be marked required.",
+          "sdkParam": "response_format: { type: 'json_schema', json_schema: { strict: true } }",
+          "notes": "100% adherence guarantee. Constrains decoding space to valid grammar paths.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
+        "gemini-3-8-flash": {
           "status": "native",
-          "label": "Native Strict",
-          "sdkParam": "response_format: { type: 'json_schema', json_schema: { strict: true, schema: ... } }",
-          "notes": "Fastest and cheapest strict schema validation.",
+          "label": "Native Schema",
+          "sdkParam": "response_mime_type: 'application/json', response_schema: PydanticModel",
+          "notes": "Deterministic schema validation at 130+ T/s with thought signature support.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
-          "status": "native",
-          "label": "Native Strict",
-          "sdkParam": "response_format: { type: 'json_schema', json_schema: { strict: true, schema: ... } }",
-          "notes": "Generates internal reasoning first, then emits strictly validated JSON.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
+        "claude-opus-5": {
           "status": "partial",
-          "label": "Tool Choice Hack",
-          "sdkParam": "tool_choice: { type: 'tool', name: 'json_output' }, tools: [{ name: 'json_output', input_schema: ... }]",
-          "notes": "No native response_format. Must define schema as a tool and force its invocation.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-haiku": {
-          "status": "partial",
-          "label": "Tool Choice Hack",
+          "label": "Tool Schema",
           "sdkParam": "tool_choice: { type: 'tool', name: 'json_output' }",
-          "notes": "High schema fidelity, but consumes tool token overhead.",
+          "notes": "High schema fidelity using tool definition constraint.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-2-0-flash": {
+        "gemini-2-5-pro": {
+          "status": "native",
+          "label": "2M Native Schema",
+          "sdkParam": "response_mime_type: 'application/json', response_schema: schema",
+          "notes": "Strict Pydantic enforcement across entire 2M context window.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-5-6-sol": {
+          "status": "native",
+          "label": "Native Strict",
+          "sdkParam": "response_format: { type: 'json_schema', strict: true }",
+          "notes": "Formal schema validation with mathematical guarantee.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "deepseek-v4-pro": {
+          "status": "native",
+          "label": "Native JSON Schema",
+          "sdkParam": "response_format: { type: 'json_object', schema: ... }",
+          "notes": "1.6T MoE structured grammar sampling.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
+          "status": "partial",
+          "label": "Tool Choice",
+          "sdkParam": "tool_choice: { type: 'tool', name: 'schema' }",
+          "notes": "High schema fidelity using tool choice constraint.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-flash": {
           "status": "native",
           "label": "Native Schema",
           "sdkParam": "response_mime_type: 'application/json', response_schema: PydanticModel",
-          "notes": "Native Pydantic or JSON schema validation at 120+ T/s.",
+          "notes": "Fast schema validation at $0.15/1M.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-1-5-pro": {
-          "status": "native",
-          "label": "Native Schema",
-          "sdkParam": "response_mime_type: 'application/json', response_schema: PydanticModel",
-          "notes": "Works across massive context windows (up to 2M tokens).",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "partial",
-          "label": "Standard JSON",
-          "sdkParam": "response_format: { type: 'json_object' }",
-          "notes": "Guarantees valid JSON syntax, but does not strictly validate keys against a schema.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
-          "status": "partial",
-          "label": "Prompt Constrained",
-          "sdkParam": "System prompt: 'Return ONLY JSON in ```json blocks'",
-          "notes": "Thinking tokens precede the output; strict JSON mode is officially unsupported.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "native",
           "label": "Native Strict (Groq)",
           "sdkParam": "response_format: { type: 'json_object' } or guided_json",
-          "notes": "Groq supports CFG/grammar constrained decoding natively.",
+          "notes": "Groq LPU hardware CFG grammar decoding.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -287,85 +287,85 @@
         "DeepSeek caches in 64-token chunks with a 90% read discount."
       ],
       "support": {
-        "gpt-4o": {
+        "claude-fable-5-1": {
+          "status": "superpower",
+          "label": "75% Discount",
+          "sdkParam": "cache_control: { type: 'ephemeral' } ($2.50/M read vs $10.00/M write)",
+          "notes": "Automatic multi-turn caching with 5-minute TTL.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-6-astra": {
           "status": "native",
-          "label": "Auto Prefix (50%)",
-          "sdkParam": "Automatic for prefixes > 1,024 tokens",
-          "notes": "No special headers required. 50% discount on cached reads.",
+          "label": "75% Discount",
+          "sdkParam": "Automatic prefix caching ($2.50/M cached input)",
+          "notes": "Zero configuration needed; automatically caches prefixes >1024 tokens.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
+        "gemini-3-8-flash": {
+          "status": "superpower",
+          "label": "90% Discount",
+          "sdkParam": "Cached input: $0.075 / 1M (-90% effective read discount, 32k min)",
+          "notes": "Sub-second context caching for code repositories and agent loops.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-opus-5": {
+          "status": "superpower",
+          "label": "75% Discount",
+          "sdkParam": "cache_control: { type: 'ephemeral' } ($1.25/M read)",
+          "notes": "Ideal for massive codebase refactoring sessions.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-pro": {
+          "status": "superpower",
+          "label": "75% Discount",
+          "sdkParam": "Hourly context caching ($4.50/M/hr storage, $0.31/M read)",
+          "notes": "Caches up to 2M tokens of videos, audio, or codebase indices.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-5-6-sol": {
           "status": "native",
-          "label": "Auto Prefix (50%)",
-          "sdkParam": "Automatic for prefixes > 1,024 tokens",
-          "notes": "Reduces already low $0.15/M price to $0.075/M.",
+          "label": "75% Discount",
+          "sdkParam": "Automatic prefix caching ($1.00/M cached input)",
+          "notes": "Automatic cache lookup for iterative mathematical proofs.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
-          "status": "native",
-          "label": "Auto Prefix (50%)",
-          "sdkParam": "Automatic for prefixes > 1,024 tokens",
-          "notes": "Caches system prompts and tool declarations across reasoning turns.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
+        "deepseek-v4-pro": {
           "status": "superpower",
-          "label": "Explicit 90% Off",
-          "sdkParam": "cache_control: { type: 'ephemeral' }",
-          "notes": "1.25x write cost; 90% discount on reads ($0.30/M). Min 1,024 tokens. 5m TTL.",
+          "label": "90% Discount",
+          "sdkParam": "Cached input: $0.07 / 1M (-90% discount, 64-token chunks)",
+          "notes": "Industry-leading caching price-to-performance ratio.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "claude-3-5-haiku": {
+        "claude-sonnet-5": {
           "status": "superpower",
-          "label": "Explicit 90% Off",
-          "sdkParam": "cache_control: { type: 'ephemeral' }",
-          "notes": "Drops input tokens to an astonishing $0.08/M on cached hits.",
+          "label": "75% Discount",
+          "sdkParam": "cache_control: { type: 'ephemeral' } ($0.75/M read)",
+          "notes": "High speed cache reads for multi-turn dev pipelines.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-2-0-flash": {
-          "status": "native",
-          "label": "Explicit (32k min)",
-          "sdkParam": "client.caches.create(model=..., config=...)",
-          "notes": "75% read discount ($0.025/M). Requires min 32,768 tokens. Hourly storage fee.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-1-5-pro": {
+        "gemini-2-5-flash": {
           "status": "superpower",
-          "label": "2M Cache King",
-          "sdkParam": "client.caches.create(ttl='1h', ...)",
-          "notes": "Cache entire codebases or hours of video. $4.50/M tokens/hr storage fee.",
+          "label": "75% Discount",
+          "sdkParam": "Cached input: $0.0375 / 1M (-75% discount)",
+          "notes": "Cheapest cached multimodal tokens available.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "superpower",
-          "label": "64-Tok Chunks (90%)",
-          "sdkParam": "Automatic prefix matching",
-          "notes": "Fine-grained 64-token chunking. $0.014/M cached read (cheapest on Earth).",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
-          "status": "superpower",
-          "label": "Auto Prefix (75%)",
-          "sdkParam": "Automatic prefix matching",
-          "notes": "Caches reasoning system contexts automatically.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "unsupported",
-          "label": "Unsupported",
-          "sdkParam": "N/A",
-          "notes": "Groq LPUs re-compute KV caches at wire speed without stateful caching.",
+          "label": "No Caching",
+          "sdkParam": "N/A (Stateless hardware inference on Groq)",
+          "notes": "Groq prioritizes raw latency over server-side KV caching.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -386,85 +386,85 @@
         "DeepSeek-R1 always thinks natively and emits reasoning between <think> and </think> tags; cannot be disabled via API."
       ],
       "support": {
-        "gpt-4o": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Standard autoregressive model without internal CoT.",
+        "claude-fable-5-1": {
+          "status": "superpower",
+          "label": "Adaptive Thinking",
+          "sdkParam": "thinking: { type: 'adaptive', budget_tokens: 32768 }",
+          "notes": "Apex autonomous reasoning with token budget flexibility up to 32k.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Direct response model.",
+        "gpt-6-astra": {
+          "status": "superpower",
+          "label": "Autonomous CoT",
+          "sdkParam": "reasoning_effort: 'ultra' | 'high' | 'medium'",
+          "notes": "Self-correcting chain-of-thought with native environment inspection.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
+        "gemini-3-8-flash": {
+          "status": "superpower",
+          "label": "Iterative Thought",
+          "sdkParam": "thinking_config: { thinking_budget: 8192 }",
+          "notes": "Deliberative reasoning traces at 130+ Tokens/sec.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-opus-5": {
           "status": "native",
-          "label": "Reasoning Effort",
-          "sdkParam": "reasoning_effort: 'low' | 'medium' | 'high'",
-          "notes": "Selectable effort levels. Does not allow exact token counts.",
+          "label": "Extended Thinking",
+          "sdkParam": "thinking: { type: 'enabled', budget_tokens: 16384 }",
+          "notes": "Deep architectural reasoning for multi-file refactors.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "claude-3-5-sonnet": {
+        "gemini-2-5-pro": {
           "status": "native",
-          "label": "Exact Token Budget",
-          "sdkParam": "thinking: { type: 'enabled', budget_tokens: 2048 }",
-          "notes": "Fine-grained control. Minimum 1,024 budget tokens required.",
+          "label": "Deep CoT",
+          "sdkParam": "thinking_config: { thinking_budget: 16384 }",
+          "notes": "Long-horizon reasoning over 2M token document corpora.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "claude-3-5-haiku": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Designed for pure speed without reasoning latency.",
+        "gpt-5-6-sol": {
+          "status": "superpower",
+          "label": "Formal Reasoning",
+          "sdkParam": "reasoning_effort: 'high' (up to 32,768 output tokens)",
+          "notes": "Formal STEM proof engine with step verification.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-2-0-flash": {
+        "deepseek-v4-pro": {
+          "status": "superpower",
+          "label": "Built-in Reasoning",
+          "sdkParam": "thinking: { type: 'enabled' }",
+          "notes": "Integrated R-series reasoning directly inside V4 MoE architecture.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
           "status": "native",
-          "label": "Thinking Budget",
-          "sdkParam": "thinking_config: { thinking_budget: 1024 }",
-          "notes": "Adjustable thinking budget or set to 0 to disable thinking entirely.",
+          "label": "Extended Thinking",
+          "sdkParam": "thinking: { type: 'enabled', budget_tokens: 8192 }",
+          "notes": "General purpose reasoning for everyday software engineering.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-1-5-pro": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Pre-reasoning era architecture.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Base non-reasoning MoE model.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
+        "gemini-2-5-flash": {
           "status": "native",
-          "label": "Always-On CoT",
-          "sdkParam": "Emits <think> tags natively",
-          "notes": "Self-determines thinking length. Thinking tokens billed at output rate.",
+          "label": "Light Thinking",
+          "sdkParam": "thinking_config: { thinking_budget: 2048 }",
+          "notes": "Lightweight reasoning before streaming tokens.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
-          "status": "unsupported",
-          "label": "No Thinking",
-          "sdkParam": "N/A",
-          "notes": "Standard instruction-tuned model.",
+          "status": "partial",
+          "label": "Prompt CoT",
+          "sdkParam": "System prompt CoT (no API token budget parameter)",
+          "notes": "Direct generation; relies on prompt-based chain-of-thought.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -485,85 +485,85 @@
         "Anthropic Claude does NOT support direct audio ingestion; developers must transcribe via Whisper or Deepgram first."
       ],
       "support": {
-        "gpt-4o": {
+        "claude-fable-5-1": {
+          "status": "partial",
+          "label": "Transcription Pre-proc",
+          "sdkParam": "Requires client-side Whisper/STT audio transcription",
+          "notes": "Text-only native input API; vision supported, audio requires transcription.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-6-astra": {
           "status": "native",
-          "label": "Native Audio In",
-          "sdkParam": "modalities: ['text', 'audio']",
-          "notes": "Requires audio input parameter. $100/1M audio tokens.",
+          "label": "Native Audio",
+          "sdkParam": "input_audio: { data: base64, format: 'wav' }",
+          "notes": "Low-latency bidirectional audio understanding and speech synthesis.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
-          "status": "native",
-          "label": "Native Audio In",
-          "sdkParam": "modalities: ['text', 'audio']",
-          "notes": "Ultra-affordable audio processing ($10/1M audio tokens).",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "o3-mini": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text and code reasoning only.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
-          "status": "unsupported",
-          "label": "Requires Whisper",
-          "sdkParam": "N/A",
-          "notes": "No native audio input. Transcribe first.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-haiku": {
-          "status": "unsupported",
-          "label": "Requires Whisper",
-          "sdkParam": "N/A",
-          "notes": "Text and image only.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-2-0-flash": {
+        "gemini-3-8-flash": {
           "status": "superpower",
-          "label": "Native Audio/Live",
-          "sdkParam": "mime_type: 'audio/mp3' or Live API WebSocket",
-          "notes": "Lowest latency audio understanding. Supports full hours of audio or live streams.",
+          "label": "Realtime Audio",
+          "sdkParam": "inlineData: { mimeType: 'audio/mp3', data: base64 }",
+          "notes": "Sub-100ms multi-speaker speech comprehension and acoustic tone detection.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-1-5-pro": {
+        "claude-opus-5": {
+          "status": "unsupported",
+          "label": "No Audio",
+          "sdkParam": "Unsupported (Requires external speech-to-text)",
+          "notes": "Focuses exclusively on text, code, and vision document perception.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-pro": {
+          "status": "superpower",
+          "label": "Hours of Audio",
+          "sdkParam": "File API / inlineData: { mimeType: 'audio/wav' }",
+          "notes": "Processes up to 11 hours of raw audio in a single prompt.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-5-6-sol": {
+          "status": "partial",
+          "label": "Audio via Transcription",
+          "sdkParam": "Requires Whisper integration",
+          "notes": "Optimized for mathematical and textual formal proofs.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "deepseek-v4-pro": {
+          "status": "unsupported",
+          "label": "No Audio",
+          "sdkParam": "Text & code specialized",
+          "notes": "Native audio input not supported in base API.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
+          "status": "unsupported",
+          "label": "No Audio",
+          "sdkParam": "Requires client-side STT",
+          "notes": "Vision supported, audio requires pre-processing.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-flash": {
           "status": "native",
-          "label": "Up to 9.5 Hours",
-          "sdkParam": "mime_type: 'audio/wav'",
-          "notes": "Upload multi-hour podcast or meeting recordings directly.",
+          "label": "Native Audio",
+          "sdkParam": "inlineData: { mimeType: 'audio/mp3' }",
+          "notes": "Real-time audio processing at $0.15/1M.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text only.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text only reasoning.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text only.",
+          "label": "No Audio",
+          "sdkParam": "Text-only on Groq LPUs",
+          "notes": "Hardware inference configured for text tokens.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -584,85 +584,85 @@
         "DeepSeek and Groq do not accept PDFs via API; developers must extract raw text or OCR externally."
       ],
       "support": {
-        "gpt-4o": {
-          "status": "partial",
-          "label": "Via Assistant API",
-          "sdkParam": "File Search tool or manual page rasterization",
-          "notes": "Chat completions API lacks direct PDF upload; requires rasterizing pages as images.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gpt-4o-mini": {
-          "status": "partial",
-          "label": "Via Assistant API",
-          "sdkParam": "Assistant API / Vector Store",
-          "notes": "Same as GPT-4o.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "o3-mini": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Does not accept PDF or image inputs.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
+        "claude-fable-5-1": {
           "status": "superpower",
-          "label": "Native Visual PDF",
+          "label": "100-Page Visual PDF",
           "sdkParam": "type: 'document', source: { type: 'base64', media_type: 'application/pdf' }",
-          "notes": "Preserves tables, graphs, and formatting. Up to 32MB / 100 pages.",
+          "notes": "Flawless visual layout, vector chart extraction, and multi-column document parsing.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "claude-3-5-haiku": {
+        "gpt-6-astra": {
           "status": "native",
-          "label": "Native Visual PDF",
-          "sdkParam": "type: 'document', source: { media_type: 'application/pdf' }",
-          "notes": "Rapid document parsing.",
+          "label": "Native Document",
+          "sdkParam": "type: 'image_url' | file input",
+          "notes": "High-fidelity document layout understanding and table parsing.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-2-0-flash": {
+        "gemini-3-8-flash": {
           "status": "superpower",
-          "label": "Native Multi-Page",
-          "sdkParam": "mime_type: 'application/pdf'",
-          "notes": "Direct PDF upload. Super-fast extraction.",
+          "label": "Direct PDF Layout",
+          "sdkParam": "inlineData: { mimeType: 'application/pdf', data: base64 }",
+          "notes": "Direct PDF byte stream ingestion with OCR, diagram, and table parsing.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-1-5-pro": {
+        "claude-opus-5": {
           "status": "superpower",
-          "label": "1,000+ Pages",
-          "sdkParam": "mime_type: 'application/pdf'",
-          "notes": "Ingest entire textbooks, legal filings, or annual reports.",
+          "label": "Native PDF",
+          "sdkParam": "media_type: 'application/pdf'",
+          "notes": "Preserves exact table coordinates and complex document layouts.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Must extract text using pdfplumber/tesseract first.",
+        "gemini-2-5-pro": {
+          "status": "superpower",
+          "label": "1,000+ Page PDF",
+          "sdkParam": "File API upload (up to 2GB document files)",
+          "notes": "Parses entire regulatory filings and legal books with complete visual diagrams.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "deepseek-r1": {
-          "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text only.",
+        "gpt-5-6-sol": {
+          "status": "partial",
+          "label": "Extracted Text",
+          "sdkParam": "Client-side PDF text extraction or File Search",
+          "notes": "Perceives mathematical formulas; heavy layouts require rasterization.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "deepseek-v4-pro": {
+          "status": "partial",
+          "label": "Text Ingestion",
+          "sdkParam": "Client text extraction required",
+          "notes": "Raw text parsing; no native visual PDF layout engine.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
+          "status": "superpower",
+          "label": "Native PDF",
+          "sdkParam": "media_type: 'application/pdf'",
+          "notes": "100-page visual document perception.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-flash": {
+          "status": "native",
+          "label": "Native PDF",
+          "sdkParam": "inlineData: { mimeType: 'application/pdf' }",
+          "notes": "Fast PDF parsing at $0.15/1M.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "unsupported",
-          "label": "Text Only",
-          "sdkParam": "N/A",
-          "notes": "Text only.",
+          "label": "No Native PDF",
+          "sdkParam": "Requires client-side pdfplumber / OCR",
+          "notes": "Stateless text-only inference.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -683,85 +683,85 @@
         "Anthropic models do not have a built-in serverless sandbox; the client must execute bash/python code locally or via E2B."
       ],
       "support": {
-        "gpt-4o": {
+        "claude-fable-5-1": {
           "status": "partial",
-          "label": "Via Assistant API",
-          "sdkParam": "tools: [{ type: 'code_interpreter' }] in Assistants API",
-          "notes": "Not supported in raw Chat Completions endpoint. $0.03/session fee.",
+          "label": "Client Bash Runner",
+          "sdkParam": "tools: [{ name: 'bash', input_schema: ... }]",
+          "notes": "Requires user-hosted container sandbox (e.g. Docker, E2B, Modal).",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
+        "gpt-6-astra": {
+          "status": "superpower",
+          "label": "Native Computer Use",
+          "sdkParam": "tools: [{ type: 'computer_2026' }, { type: 'code_interpreter' }]",
+          "notes": "Autonomous sandbox execution with terminal, filesystem, and GUI control.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-3-8-flash": {
+          "status": "superpower",
+          "label": "Free Python Sandbox",
+          "sdkParam": "tools: [{ code_execution: {} }]",
+          "notes": "Zero-cost Google serverless Python runtime with matplotlib and numpy.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-opus-5": {
           "status": "partial",
-          "label": "Via Assistant API",
+          "label": "Client Orchestrator",
+          "sdkParam": "Tool calling bash runner",
+          "notes": "Client environment execution with automated error recovery.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-pro": {
+          "status": "superpower",
+          "label": "Native Python Sandbox",
+          "sdkParam": "tools: [{ code_execution: {} }]",
+          "notes": "Executes verification code across 2M context datasets.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gpt-5-6-sol": {
+          "status": "native",
+          "label": "Sandboxed Python",
           "sdkParam": "tools: [{ type: 'code_interpreter' }]",
-          "notes": "Requires Assistants API.",
+          "notes": "Formal execution checks for theorem proofs and numerical simulation.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
-          "status": "unsupported",
-          "label": "No Sandbox",
-          "sdkParam": "N/A",
-          "notes": "Generates code text but cannot execute it in-turn.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
-          "status": "unsupported",
+        "deepseek-v4-pro": {
+          "status": "partial",
           "label": "External Runner",
-          "sdkParam": "Requires client-side sandbox (e.g. E2B)",
-          "notes": "API emits tool call; developer must host the execution environment.",
+          "sdkParam": "Client sandbox required",
+          "notes": "Emits clean Python code; execution handled by client.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "claude-3-5-haiku": {
-          "status": "unsupported",
+        "claude-sonnet-5": {
+          "status": "partial",
           "label": "External Runner",
-          "sdkParam": "N/A",
-          "notes": "No native sandbox.",
+          "sdkParam": "Client sandbox required",
+          "notes": "Tool-calling execution in external runner.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-2-0-flash": {
+        "gemini-2-5-flash": {
           "status": "superpower",
-          "label": "Free Native Sandbox",
+          "label": "Free Python Sandbox",
           "sdkParam": "tools: [{ code_execution: {} }]",
-          "notes": "Iteratively writes, runs, and inspects Python output inside the call at $0 extra.",
+          "notes": "Zero-cost serverless Python sandbox.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-1-5-pro": {
-          "status": "superpower",
-          "label": "Free Native Sandbox",
-          "sdkParam": "tools: [{ code_execution: {} }]",
-          "notes": "Solves math, complex statistical analysis, and data cleaning in-flight.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "No Sandbox",
-          "sdkParam": "N/A",
-          "notes": "Emits code blocks only.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
-          "status": "unsupported",
-          "label": "No Sandbox",
-          "sdkParam": "N/A",
-          "notes": "Reasons about code, but cannot execute.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "unsupported",
           "label": "No Sandbox",
-          "sdkParam": "N/A",
-          "notes": "Requires external sandbox.",
+          "sdkParam": "Unsupported",
+          "notes": "Groq provides API inference only.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -782,85 +782,85 @@
         "Anthropic has no native web search grounding; developers must integrate Tavily, Exa, or Google Serper via tools."
       ],
       "support": {
-        "gpt-4o": {
+        "claude-fable-5-1": {
           "status": "partial",
-          "label": "Responses API",
-          "sdkParam": "tools: [{ type: 'web_search_preview' }]",
-          "notes": "Available in beta on select endpoints.",
+          "label": "Tool Web Search",
+          "sdkParam": "tools: [{ name: 'brave_search', input_schema: ... }]",
+          "notes": "Requires external search API key (Brave, Tavily, Perplexity).",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
+        "gpt-6-astra": {
+          "status": "native",
+          "label": "Native Web Browse",
+          "sdkParam": "tools: [{ type: 'web_search_2026' }]",
+          "notes": "Autonomous web exploration, live citation indexing, and URL traversal.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-3-8-flash": {
+          "status": "superpower",
+          "label": "Google Search Grounding",
+          "sdkParam": "tools: [{ google_search: {} }]",
+          "notes": "Live Google Search index grounding with inline source citations.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-opus-5": {
           "status": "partial",
-          "label": "Responses API",
-          "sdkParam": "tools: [{ type: 'web_search_preview' }]",
-          "notes": "Search preview support.",
+          "label": "Tool Search",
+          "sdkParam": "Tool calling external search",
+          "notes": "Client-provided web search tool.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
-          "status": "unsupported",
-          "label": "No Search",
-          "sdkParam": "N/A",
-          "notes": "Frozen training data only.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
-          "status": "unsupported",
-          "label": "Requires Tavily/Exa",
-          "sdkParam": "N/A",
-          "notes": "No native search. Must integrate external search API via tools.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-haiku": {
-          "status": "unsupported",
-          "label": "Requires Tavily/Exa",
-          "sdkParam": "N/A",
-          "notes": "No native search.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-2-0-flash": {
+        "gemini-2-5-pro": {
           "status": "superpower",
-          "label": "Native Google Search",
+          "label": "Google Search Grounding",
           "sdkParam": "tools: [{ google_search: {} }]",
-          "notes": "Instant Google Search results with citation URLs and searchEntryPoint html.",
+          "notes": "Grounds 2M context research synthesis in real-time Google search results.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-1-5-pro": {
-          "status": "superpower",
-          "label": "Native Google Search",
+        "gpt-5-6-sol": {
+          "status": "native",
+          "label": "Native Web Search",
+          "sdkParam": "tools: [{ type: 'web_search' }]",
+          "notes": "Fetches up-to-date scientific publications and benchmark datasets.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "deepseek-v4-pro": {
+          "status": "partial",
+          "label": "Web Search Tool",
+          "sdkParam": "Client search orchestration",
+          "notes": "Supports search tool schema via API.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
+          "status": "partial",
+          "label": "Tool Search",
+          "sdkParam": "Client search tool",
+          "notes": "Tool-calling web search.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-flash": {
+          "status": "native",
+          "label": "Google Search Grounding",
           "sdkParam": "tools: [{ google_search: {} }]",
-          "notes": "Google Search grounding across complex research queries.",
+          "notes": "Live Google Search integration at high speed.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "No Search",
-          "sdkParam": "N/A",
-          "notes": "Requires external tool search.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "deepseek-r1": {
-          "status": "unsupported",
-          "label": "No Search",
-          "sdkParam": "N/A",
-          "notes": "Pure latent CoT; no live web browsing.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
           "status": "unsupported",
-          "label": "No Search",
-          "sdkParam": "N/A",
-          "notes": "No native search.",
+          "label": "No Grounding",
+          "sdkParam": "Unsupported",
+          "notes": "Pure inference without integrated search grounding.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {
@@ -881,85 +881,85 @@
         "OpenAI models are capped at 128,000 tokens (o3-mini is 200,000)."
       ],
       "support": {
-        "gpt-4o": {
-          "status": "unsupported",
-          "label": "128k Tokens",
-          "sdkParam": "max 128,000",
-          "notes": "Capped at 128k.",
+        "claude-fable-5-1": {
+          "status": "superpower",
+          "label": "1,000,000 Tokens",
+          "sdkParam": "max_tokens: 32768, context: 1M",
+          "notes": "1M context with needle-in-haystack accuracy above 99.8%.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gpt-4o-mini": {
-          "status": "unsupported",
-          "label": "128k Tokens",
-          "sdkParam": "max 128,000",
-          "notes": "Capped at 128k.",
+        "gpt-6-astra": {
+          "status": "native",
+          "label": "500,000 Tokens",
+          "sdkParam": "max_completion_tokens: 32768, context: 500k",
+          "notes": "500k context window designed for multi-hour computer use sessions.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "o3-mini": {
-          "status": "unsupported",
-          "label": "200k Tokens",
-          "sdkParam": "max 200,000",
-          "notes": "Capped at 200k.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-sonnet": {
-          "status": "unsupported",
-          "label": "200k Tokens",
-          "sdkParam": "max 200,000",
-          "notes": "Capped at 200k.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "claude-3-5-haiku": {
-          "status": "unsupported",
-          "label": "200k Tokens",
-          "sdkParam": "max 200,000",
-          "notes": "Capped at 200k.",
-          "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
-        },
-        "gemini-2-0-flash": {
+        "gemini-3-8-flash": {
           "status": "superpower",
           "label": "1,048,576 Tokens",
-          "sdkParam": "max 1M input tokens",
-          "notes": "1 Million tokens standard at $0.10/M tokens.",
+          "sdkParam": "1M context window ($0.75/1M in)",
+          "notes": "1M native tokens with 65,536 max output ceiling.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "gemini-1-5-pro": {
+        "claude-opus-5": {
+          "status": "superpower",
+          "label": "1,000,000 Tokens",
+          "sdkParam": "context: 1M, max_tokens: 16384",
+          "notes": "1M context for whole-codebase analysis.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-pro": {
           "status": "superpower",
           "label": "2,097,152 Tokens",
-          "sdkParam": "max 2M input tokens",
-          "notes": "Industry record 2 Million tokens context window.",
+          "sdkParam": "2M context window (Industry Peak)",
+          "notes": "2,097,152 token context depth with needle-in-haystack perfection.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "deepseek-v3": {
-          "status": "unsupported",
-          "label": "64k Tokens",
-          "sdkParam": "max 64,000",
-          "notes": "Capped at 64k.",
+        "gpt-5-6-sol": {
+          "status": "partial",
+          "label": "256,000 Tokens",
+          "sdkParam": "context: 256k, output: 32768",
+          "notes": "256k window with high focus for mathematical reasoning.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
-        "deepseek-r1": {
-          "status": "unsupported",
-          "label": "64k Tokens",
-          "sdkParam": "max 64,000",
-          "notes": "Capped at 64k.",
+        "deepseek-v4-pro": {
+          "status": "partial",
+          "label": "128,000 Tokens",
+          "sdkParam": "context: 128k, output: 16384",
+          "notes": "128k context with 90% caching discount.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "claude-sonnet-5": {
+          "status": "superpower",
+          "label": "1,000,000 Tokens",
+          "sdkParam": "context: 1M, max_tokens: 16384",
+          "notes": "Standard 1M context across production deployments.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
+        },
+        "gemini-2-5-flash": {
+          "status": "superpower",
+          "label": "1,048,576 Tokens",
+          "sdkParam": "1M context window ($0.15/1M in)",
+          "notes": "Ultra-cheap 1M context window.",
+          "verified": true,
+          "verifiedAt": "2026-09-04T20:31:03Z"
         },
         "llama-3-3-70b": {
-          "status": "unsupported",
-          "label": "128k Tokens",
-          "sdkParam": "max 128,000",
-          "notes": "Capped at 128k.",
+          "status": "partial",
+          "label": "128,000 Tokens",
+          "sdkParam": "context: 128k",
+          "notes": "128k context processed at 300+ Tokens/sec.",
           "verified": true,
-          "verifiedAt": "2026-09-04T18:00:00Z"
+          "verifiedAt": "2026-09-04T20:31:03Z"
         }
       },
       "codeExamples": {

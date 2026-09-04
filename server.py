@@ -21,6 +21,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 if __name__ == "__main__":
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         print(f"\n⚡ [CanAI] Serving at http://localhost:{PORT}")
         print(f"📁 Root directory: {DIRECTORY}\n")

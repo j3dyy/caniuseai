@@ -5,6 +5,7 @@ import { icons } from "../utils/icons.js";
 import { renderStatusBadge } from "../utils/formatters.js";
 import { renderFeatureDrawer } from "./feature-drawer.js";
 import { attachCodeViewerEvents } from "./code-viewer.js";
+import { getModelFifaCard } from "../utils/fifa-stats.js";
 
 export function renderMatrix(store) {
   const mount = document.getElementById("matrix-mount");
@@ -54,15 +55,23 @@ export function renderMatrix(store) {
                 <th class="th-feature">
                   <span>Capability / Feature</span>
                 </th>
-                ${models.map(m => `
-                  <th class="th-model" data-model-id="${m.id}">
-                    <div class="model-header-cell">
-                      <span class="model-header-name">${m.name}</span>
-                      <span class="model-header-provider">${m.providerName}</span>
-                      <span class="model-header-badge">${m.contextWindow}</span>
-                    </div>
-                  </th>
-                `).join("")}
+                ${models.map(m => {
+                  const fifa = getModelFifaCard(m);
+                  return `
+                    <th class="th-model" data-model-id="${m.id}">
+                      <div class="model-header-cell">
+                        <span class="model-header-name">${m.name}</span>
+                        <span class="model-header-provider">${m.providerName}</span>
+                        <span class="model-header-badge">${m.contextWindow}</span>
+                        <div class="model-fifa-header-badge" data-model-id="${m.id}" title="Enter FIFA Battle Arena with ${m.name}">
+                          ${fifa.ovr >= 97 ? '<span class="fifa-badge-crown">👑</span>' : ''}
+                          <span class="fifa-badge-ovr">${fifa.ovr}</span>
+                          <span class="fifa-badge-pos">${fifa.position}</span>
+                        </div>
+                      </div>
+                    </th>
+                  `;
+                }).join("")}
               </tr>
             </thead>
             <tbody>
@@ -156,4 +165,14 @@ export function renderMatrix(store) {
 
   // Attach Code Viewer Snippet Events
   attachCodeViewerEvents(mount, store);
+
+  // Attach FIFA Badge click handler to jump straight into Battle Arena
+  mount.querySelectorAll(".model-fifa-header-badge").forEach(badge => {
+    badge.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const modelId = badge.getAttribute("data-model-id");
+      store.openDiffModal(modelId);
+      store.setDiffViewMode("battle");
+    });
+  });
 }

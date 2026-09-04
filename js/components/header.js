@@ -82,9 +82,9 @@ export function renderHeader(store) {
 
         <!-- Header Actions -->
         <div class="header-actions">
-          <button class="header-btn btn-diff" id="btn-open-diff" title="Side-by-side model diff comparison">
-            ${icons.diff(15)}
-            <span>Compare Models</span>
+          <button class="header-btn btn-diff" id="btn-open-diff" title="Side-by-side model diff & FIFA Card Battle (Press C)">
+            ${icons.zap(15)}
+            <span>⚡ FIFA Battle</span>
           </button>
           
           <button class="icon-btn" id="btn-theme-toggle" title="Toggle Theme" aria-label="Toggle light or dark theme">
@@ -109,10 +109,15 @@ export function renderHeader(store) {
           </span>
         </div>
 
-        <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+        <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
           <span>Tracking <strong>${data?.models?.length || 10} Models</strong></span>
           <span>&bull;</span>
           <span><strong>${data?.features?.length || 7} Core Capabilities</strong></span>
+          <button type="button" class="hero-champion-pill" id="hero-reigning-champ" title="Battle Reigning Champion Claude Fable 5.1">
+            <span>👑</span>
+            <span>Champion: Claude Fable 5.1 (99 OVR)</span>
+            <span>⚡</span>
+          </button>
         </div>
       </div>
 
@@ -166,6 +171,12 @@ export function renderHeader(store) {
   // Attach diff modal listener
   document.getElementById("btn-open-diff")?.addEventListener("click", () => {
     store.openDiffModal();
+  });
+
+  // Attach hero champion pill listener
+  document.getElementById("hero-reigning-champ")?.addEventListener("click", () => {
+    store.openDiffModal("claude-fable-5-1");
+    store.setDiffViewMode("battle");
   });
 
   // Attach category filter pills

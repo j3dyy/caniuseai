@@ -13,13 +13,14 @@ export class StateStore {
     
     // Model Diff Mode state (supports 2 or 3 models dynamically)
     this.diffOpen = false;
-    this.diffModels = ["gpt-4o", "claude-3-5-sonnet"];
+    this.diffModels = ["claude-fable-5-1", "gemini-3-8-flash"];
+    this.diffViewMode = localStorage.getItem("caniuse_diff_view") || "battle"; // "battle" | "matrix"
 
     this.listeners = [];
   }
 
   get diffModelA() {
-    return this.diffModels[0] || "gpt-4o";
+    return this.diffModels[0] || "claude-fable-5-1";
   }
 
   set diffModelA(val) {
@@ -27,7 +28,7 @@ export class StateStore {
   }
 
   get diffModelB() {
-    return this.diffModels[1] || "claude-3-5-sonnet";
+    return this.diffModels[1] || "gemini-3-8-flash";
   }
 
   set diffModelB(val) {
@@ -133,6 +134,14 @@ export class StateStore {
   closeDiffModal() {
     this.diffOpen = false;
     this.notify();
+  }
+
+  setDiffViewMode(mode) {
+    if (mode === "battle" || mode === "matrix") {
+      this.diffViewMode = mode;
+      localStorage.setItem("caniuse_diff_view", mode);
+      this.notify();
+    }
   }
 
   setDiffModels(modelA, modelB, modelC = null) {
