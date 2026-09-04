@@ -20,10 +20,25 @@ Instantly answers: **"Can this model do X, and what is the exact SDK parameter?"
 
 ## 🚀 Running Locally
 
+### Option 1: Python (Zero Dependency)
 ```bash
-# Start local development server (Python zero-dependency)
 python3 server.py
 ```
+
+### Option 2: Docker
+```bash
+# Build the Docker image
+docker build -t caniuseai .
+
+# Run container
+docker run -d -p 8081:8081 --name caniuseai caniuseai
+```
+
+### Option 3: Docker Compose
+```bash
+docker compose up -d
+```
+
 Open **http://localhost:8081** in your browser.
 
 ---
