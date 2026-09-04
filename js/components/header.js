@@ -11,6 +11,39 @@ export function renderHeader(store) {
   const isDark = store.theme === "dark";
   const categories = data?.categories || [];
 
+  // Check if header is already rendered in DOM.
+  // If so, update in-place without blowing away mount.innerHTML to preserve input focus.
+  const existingHeader = mount.querySelector(".site-header");
+  if (existingHeader) {
+    const searchInput = document.getElementById("global-search-input");
+    const clearBtn = document.getElementById("search-clear-btn");
+    const kbdHint = document.getElementById("search-kbd-hint");
+
+    // Only update value if the user is not actively typing in it
+    if (searchInput && document.activeElement !== searchInput) {
+      searchInput.value = store.searchQuery || "";
+    }
+    if (clearBtn) {
+      clearBtn.style.display = store.searchQuery ? "flex" : "none";
+    }
+    if (kbdHint) {
+      kbdHint.style.display = store.searchQuery ? "none" : "inline-block";
+    }
+
+    // Sync active category pill
+    mount.querySelectorAll(".cat-pill").forEach(pill => {
+      const catId = pill.getAttribute("data-category");
+      pill.classList.toggle("active", catId === store.activeCategory);
+    });
+
+    // Sync theme toggle icon
+    const themeBtn = document.getElementById("btn-theme-toggle");
+    if (themeBtn) {
+      themeBtn.innerHTML = isDark ? icons.sun(18) : icons.moon(18);
+    }
+    return;
+  }
+
   mount.innerHTML = `
     <!-- Top Site Nav -->
     <header class="site-header">
@@ -30,7 +63,8 @@ export function renderHeader(store) {
           <div class="header-search-box">
             <span class="search-icon">${icons.search(16)}</span>
             <input
-              type="search"
+              type="text"
+              role="searchbox"
               id="global-search-input"
               class="search-input"
               placeholder="Filter capabilities or models... (e.g. prompt caching, gpt-4o)"
@@ -39,8 +73,8 @@ export function renderHeader(store) {
               autocomplete="off"
               spellcheck="false"
             />
-            <button class="search-clear-btn" id="search-clear-btn" style="display: ${store.searchQuery ? "flex" : "none"};" title="Clear filter">
-              ${icons.x(14)}
+            <button type="button" class="search-clear-btn" id="search-clear-btn" style="display: ${store.searchQuery ? "flex" : "none"};" title="Clear filter">
+              ${icons.x(12)}
             </button>
             <kbd class="search-kbd" id="search-kbd-hint" style="display: ${store.searchQuery ? "none" : "inline-block"};">/</kbd>
           </div>

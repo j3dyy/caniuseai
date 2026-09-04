@@ -65,8 +65,10 @@ export function renderMatrix(store) {
               ${categorized.map(cat => `
                 <tr class="category-divider-row">
                   <td colspan="${models.length + 1}">
-                    ${icons[cat.icon] ? icons[cat.icon](14) : icons.layers(14)}
-                    <span>${cat.name}</span>
+                    <div class="category-divider-inner">
+                      ${icons[cat.icon] ? icons[cat.icon](14) : icons.layers(14)}
+                      <span>${cat.name}</span>
+                    </div>
                   </td>
                 </tr>
                 ${cat.features.map(f => {
@@ -74,11 +76,13 @@ export function renderMatrix(store) {
                   return `
                     <tr class="feature-row ${isExpanded ? "expanded" : ""}" data-feature-id="${f.id}">
                       <td class="td-feature-name">
-                        <div class="feature-title-wrap">
-                          <span class="feature-chevron">${icons.chevronRight(14)}</span>
-                          <span class="feature-title">${f.name}</span>
+                        <div class="feature-name-inner">
+                          <div class="feature-title-wrap">
+                            <span class="feature-chevron">${icons.chevronRight(14)}</span>
+                            <span class="feature-title">${f.name}</span>
+                          </div>
+                          <span class="feature-summary">${f.summary}</span>
                         </div>
-                        <span class="feature-summary">${f.summary}</span>
                       </td>
                       ${models.map(m => {
                         const s = f.support ? f.support[m.id] : null;
