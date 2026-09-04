@@ -84,7 +84,8 @@ export function renderHeader(store) {
         <div class="header-actions">
           <button class="header-btn btn-diff" id="btn-open-diff" title="Side-by-side model diff & FIFA Card Battle (Press C)">
             ${icons.zap(15)}
-            <span>⚡ FIFA Battle</span>
+            <span class="btn-diff-text-desktop">FIFA Battle</span>
+            <span class="btn-diff-text-mobile">Battle</span>
           </button>
           
           <button class="icon-btn" id="btn-theme-toggle" title="Toggle Theme" aria-label="Toggle light or dark theme">

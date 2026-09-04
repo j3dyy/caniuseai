@@ -195,6 +195,14 @@ input[type="search"]::-webkit-search-results-decoration {
   box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
 }
 
+.btn-diff-text-mobile {
+  display: none;
+}
+
+.btn-diff-text-desktop {
+  display: inline;
+}
+
 .icon-btn {
   width: 36px;
   height: 36px;
@@ -1116,4 +1124,307 @@ input[type="search"]::-webkit-search-results-decoration {
 .copy-toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE ENHANCEMENTS
+   CanIUse.ai Topbar, Hero Strip, Matrix Table & Diff Modal
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Site Header: Search wraps to full-width row */
+  .site-header {
+    padding: 8px 0;
+  }
+
+  .site-header-inner {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px 8px !important;
+  }
+
+  .brand-group {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    gap: 8px !important;
+  }
+
+  .brand-logo-wrap {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .brand-logo-wrap svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .brand-title {
+    font-size: 1.12rem !important;
+  }
+
+  .brand-subtitle {
+    display: none !important;
+  }
+
+  .header-actions {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    gap: 6px !important;
+  }
+
+  .header-btn {
+    padding: 5px 9px !important;
+    font-size: 0.74rem !important;
+  }
+
+  .header-btn.btn-diff {
+    padding: 5px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .btn-diff-text-desktop {
+    display: none !important;
+  }
+
+  .btn-diff-text-mobile {
+    display: inline !important;
+  }
+
+  .icon-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .header-search-wrap {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 3 !important;
+    margin-top: 4px !important;
+  }
+
+  .header-search-box {
+    padding: 6px 12px;
+  }
+
+  .search-input {
+    font-size: 0.82rem;
+  }
+
+  /* Hero & Category Navigation */
+  .hero-radar-strip {
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .hero-stats-row {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .hero-heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .hero-badge-pill {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+  }
+
+  .hero-champion-pill {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 4px;
+    font-size: 0.74rem;
+    padding: 6px 12px;
+  }
+
+  .cat-pill {
+    padding: 5px 11px;
+    font-size: 0.76rem;
+  }
+
+  /* Matrix Table: Compact sticky column & responsive cells */
+  .matrix-container-card {
+    margin-bottom: 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .th-feature {
+    width: 125px !important;
+    min-width: 115px !important;
+    max-width: 135px !important;
+    padding: 8px 8px !important;
+    font-size: 0.74rem;
+  }
+
+  .td-feature-name {
+    width: 125px !important;
+    min-width: 115px !important;
+    max-width: 135px !important;
+    padding: 8px 8px !important;
+  }
+
+  .feature-title {
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .feature-summary {
+    display: none !important;
+  }
+
+  .th-model {
+    min-width: 74px !important;
+    padding: 8px 2px !important;
+  }
+
+  .model-header-name {
+    font-size: 0.72rem;
+    max-width: 76px;
+  }
+
+  .model-header-provider {
+    font-size: 0.6rem;
+  }
+
+  .model-header-badge {
+    font-size: 0.58rem;
+  }
+
+  .model-fifa-header-badge {
+    padding: 1px 4px;
+    font-size: 0.65rem;
+  }
+
+  .td-model-cell {
+    min-width: 74px !important;
+    padding: 6px 2px !important;
+  }
+
+  .status-badge {
+    font-size: 0.65rem !important;
+    padding: 3px 5px !important;
+  }
+
+  /* Feature Detail Drawer on Mobile */
+  .drawer-content {
+    position: sticky !important;
+    left: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 12px 14px !important;
+  }
+
+  .drawer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .drawer-code-col {
+    max-width: 100% !important;
+  }
+
+  /* Diff Modal Base & Classic View */
+  .diff-modal-backdrop {
+    padding: 4px !important;
+  }
+
+  .diff-modal {
+    width: 100% !important;
+    height: 98vh !important;
+    max-height: 98vh !important;
+    border-radius: 14px !important;
+  }
+
+  .diff-modal-header {
+    padding: 6px 8px !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+
+  .diff-modal-header > div:first-child {
+    min-width: 0;
+    flex: 0 1 auto;
+    overflow: hidden;
+  }
+
+  .diff-icon-badge {
+    display: none !important;
+  }
+
+  .diff-modal-title {
+    font-size: 0.78rem !important;
+    max-width: 105px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .diff-modal-subtitle {
+    display: none !important;
+  }
+
+  .diff-view-switcher {
+    padding: 2px !important;
+    gap: 2px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .diff-view-tab {
+    padding: 3px 6px !important;
+    font-size: 0.65rem !important;
+    gap: 2px !important;
+  }
+
+  .diff-view-tab svg {
+    display: none !important;
+  }
+
+  #btn-close-diff {
+    width: 26px !important;
+    height: 26px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .diff-selectors-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 8px 12px !important;
+    gap: 6px !important;
+  }
+
+  .diff-vs-badge {
+    display: none !important;
+  }
+
+  .diff-body {
+    padding: 8px 10px !important;
+  }
+
+  .diff-table-container.cols-2 {
+    min-width: 100% !important;
+  }
+
+  .diff-table-header.cols-2,
+  .diff-row.cols-2 {
+    grid-template-columns: 105px 1fr 1fr !important;
+    gap: 6px !important;
+    padding: 6px 8px !important;
+  }
+
+  .diff-feature-title {
+    font-size: 0.76rem;
+  }
+
+  .diff-feature-summary {
+    display: none !important;
+  }
+
+  .diff-cell-notes {
+    display: none !important;
+  }
 }

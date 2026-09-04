@@ -833,19 +833,7 @@
 .card-fighter.loser-dimmed { animation: loserDesaturate 0.85s ease-out forwards; }
 .arena-shaking { animation: screenShake 0.32s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
 
-/* Responsive Viewports */
-@media (max-width: 860px) {
-  .arena-stage {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .fifa-card-container {
-    width: 290px;
-  }
-  .fifa-card {
-    width: 290px;
-  }
-}
+/* Responsive Viewports defined comprehensively at the end of the stylesheet */
 
 /* ==========================================================================
    SHARE BUTTONS & CLIPBOARD TOAST
@@ -1325,4 +1313,503 @@
 .empty-query {
   color: #ffd700;
   font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (TABLETS & MOBILE PHONES)
+   Dual Side-by-Side Compact FUT Cards & Bounded Dropdown Deck
+   ========================================================================== */
+
+/* Tablet & Mid Viewports (641px - 860px) */
+@media (max-width: 860px) and (min-width: 641px) {
+  .arena-stage {
+    gap: 14px;
+    max-width: 720px;
+  }
+  .fifa-card-container {
+    width: 255px;
+  }
+  .fifa-card {
+    width: 255px;
+    min-height: 420px;
+  }
+  .fut-shield-graphic {
+    width: 120px;
+    height: 115px;
+  }
+  .fifa-card__header {
+    grid-template-columns: 50px 1fr;
+    padding: 12px 12px 4px;
+  }
+  .fifa-card__ovr {
+    font-size: 2.3rem;
+  }
+  .fifa-card__pos {
+    font-size: 0.95rem;
+  }
+  .fifa-card__name {
+    font-size: 1.35rem;
+  }
+  .fifa-stat-item__val {
+    font-size: 1.25rem;
+  }
+  .fifa-stat-item__key {
+    font-size: 0.9rem;
+  }
+  .arena-selector-deck {
+    max-width: 680px;
+    gap: 10px;
+  }
+  .arena-searchable-dropdown {
+    min-width: 210px;
+  }
+}
+
+/* Mobile Viewports (<= 640px) - Dual Side-by-Side Compact Cards */
+@media (max-width: 640px) {
+  .diff-modal.diff-modal--battle {
+    width: 100% !important;
+    height: 98vh !important;
+    max-height: 98vh !important;
+    border-radius: 14px !important;
+  }
+
+  .diff-modal.diff-modal--battle .battle-arena {
+    padding: 6px 6px 18px !important;
+    max-height: calc(98vh - 54px) !important;
+    gap: 8px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* HUD */
+  .arena-hud {
+    gap: 3px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .arena-round-indicator {
+    font-size: 0.72rem !important;
+    padding: 2px 9px !important;
+  }
+
+  .arena-scoreboard {
+    padding: 3px 14px !important;
+    border-radius: 10px !important;
+    gap: 8px !important;
+  }
+
+  .arena-score-num {
+    font-size: 1.5rem !important;
+    min-width: 16px !important;
+  }
+
+  .arena-score-divider {
+    font-size: 1.05rem !important;
+  }
+
+  /* Full-width Stacked Selector Deck */
+  .arena-selector-deck {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 5px !important;
+    align-items: stretch !important;
+    margin-bottom: 4px !important;
+    padding: 0 2px !important;
+    box-sizing: border-box !important;
+  }
+
+  .arena-selector-group {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+  }
+
+  .arena-selector-label {
+    font-size: 0.68rem !important;
+    min-width: 52px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .arena-searchable-dropdown {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .arena-dropdown-trigger {
+    padding: 4px 8px !important;
+    height: 30px !important;
+  }
+
+  .dropdown-trigger-left {
+    gap: 6px !important;
+  }
+
+  .dropdown-trigger-name {
+    font-size: 0.75rem !important;
+    max-width: 115px !important;
+  }
+
+  .dropdown-trigger-right {
+    gap: 5px !important;
+  }
+
+  .dropdown-trigger-ovr {
+    font-size: 0.7rem !important;
+    padding: 1px 4px !important;
+  }
+
+  .arena-dropdown-popover {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-width: 100% !important;
+    top: calc(100% + 4px) !important;
+  }
+
+  .arena-search-box {
+    padding: 5px 8px !important;
+  }
+
+  .arena-search-input {
+    font-size: 0.74rem !important;
+    padding: 4px 20px 4px 24px !important;
+  }
+
+  .arena-dropdown-list {
+    max-height: 160px !important;
+  }
+
+  .item-name {
+    font-size: 0.74rem !important;
+  }
+
+  .item-provider {
+    font-size: 0.62rem !important;
+  }
+
+  .item-ovr-badge {
+    font-size: 0.7rem !important;
+  }
+
+  /* Arena Stage: 2-Card Horizontal Battle Grid */
+  .arena-stage {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    margin: 44px 0 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Center Controls: Battle button on top, VS badge centered between cards */
+  .arena-center-clash {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    z-index: 25 !important;
+  }
+
+  .btn-trigger-clash {
+    position: absolute !important;
+    top: -42px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 6px 20px !important;
+    font-size: 0.94rem !important;
+    letter-spacing: 0.06em !important;
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.55) !important;
+    white-space: nowrap !important;
+    z-index: 30 !important;
+  }
+
+  .arena-vs-badge {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.56rem !important;
+    border-width: 1px !important;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.35) !important;
+    z-index: 22 !important;
+    margin: 0 !important;
+  }
+
+  /* Crucial: .card-fighter is the direct child of .arena-stage */
+  .card-fighter {
+    flex: 0 0 calc(50% - 15px) !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 15px) !important;
+    width: calc(50% - 15px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-card-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    perspective: 600px !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    border-radius: 12px !important;
+    border-width: 1.5px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 14px rgba(212, 175, 55, 0.2) !important;
+    overflow: hidden !important;
+  }
+
+  .fifa-card__header {
+    display: grid !important;
+    grid-template-columns: 24px 1fr !important;
+    padding: 5px 4px 1px !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-card__badge-cluster {
+    gap: 0 !important;
+  }
+
+  .fifa-card__ovr {
+    font-size: 1.35rem !important;
+    line-height: 0.9 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.3) !important;
+  }
+
+  .fifa-card__pos {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  .fifa-card__provider-badge {
+    margin-top: 1px !important;
+  }
+
+  .fifa-card__provider-badge svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .fifa-card__crest-wrap {
+    height: 56px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .fut-shield-graphic {
+    max-width: 100% !important;
+    width: 60px !important;
+    height: 56px !important;
+  }
+
+  .fifa-card__identity {
+    padding: 1px 3px 2px !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-card__name {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.1 !important;
+  }
+
+  .fifa-card__sublabel {
+    font-size: 0.44rem !important;
+    letter-spacing: 0.02em !important;
+    margin-top: 1px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .fifa-card__gold-band {
+    margin: 1px 4px 2px !important;
+  }
+
+  /* 6-Clash Board on Mobile: 3 Left | Divider | 3 Right */
+  .fifa-clash-board {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) !important;
+    align-items: stretch !important;
+    padding: 2px 3px 3px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .fifa-clash-board__divider {
+    width: 1px !important;
+    margin: 1px 0 !important;
+  }
+
+  .fifa-clash-board__column {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-clash-board__column--left {
+    padding-right: 2px !important;
+  }
+
+  .fifa-clash-board__column--right {
+    padding-left: 2px !important;
+  }
+
+  .fifa-stat-item {
+    padding: 1px 1px !important;
+    border-radius: 3px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .fifa-stat-item__row {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 2px !important;
+    overflow: hidden !important;
+  }
+
+  .fifa-stat-item__val {
+    font-size: 0.78rem !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+  }
+
+  .fifa-stat-item__key {
+    font-size: 0.54rem !important;
+    letter-spacing: 0.03em !important;
+    font-weight: 750 !important;
+  }
+
+  .fifa-stat-item__chip {
+    font-size: 0.42rem !important;
+    padding: 0 1px !important;
+    line-height: 1 !important;
+    margin-left: auto !important;
+  }
+
+  .fifa-card__footer {
+    padding: 2px 4px 4px !important;
+    margin-top: auto !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+  }
+
+  .fifa-card__record {
+    font-size: 0.6rem !important;
+  }
+
+  .fifa-card__tier {
+    display: none !important;
+  }
+
+  /* Popover on Mobile */
+  .fifa-stat-popover {
+    width: 155px !important;
+    padding: 5px 7px !important;
+    font-size: 0.64rem !important;
+    z-index: 1100 !important;
+  }
+
+  .fifa-stat-popover__title {
+    font-size: 0.72rem !important;
+  }
+
+  .fifa-stat-popover__score {
+    font-size: 0.68rem !important;
+  }
+
+  .fifa-stat-popover__code {
+    font-size: 0.56rem !important;
+    padding: 2px 4px !important;
+  }
+
+  /* Victory Banner on Mobile */
+  .victory-banner {
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .victory-banner__trophy {
+    font-size: 1.5rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .victory-banner__title {
+    font-size: 1.2rem !important;
+  }
+
+  .victory-banner__score {
+    font-size: 0.92rem !important;
+    padding: 1px 8px !important;
+    margin: 3px 0 5px !important;
+  }
+
+  .victory-banner__verdict {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .victory-share-row {
+    margin-top: 8px !important;
+    gap: 6px !important;
+  }
+
+  .btn-share-match {
+    padding: 5px 12px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .btn-share-x {
+    padding: 5px 12px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+/* Extra Compact Phones (<= 380px) */
+@media (max-width: 380px) {
+  .fifa-card__name {
+    font-size: 0.68rem !important;
+  }
+  .fifa-card__ovr {
+    font-size: 1.38rem !important;
+  }
+  .fifa-card__crest-wrap {
+    height: 60px !important;
+  }
+  .fut-shield-graphic {
+    width: 64px !important;
+    height: 60px !important;
+  }
+  .fifa-stat-item__val {
+    font-size: 0.8rem !important;
+  }
+  .fifa-stat-item__key {
+    font-size: 0.56rem !important;
+  }
 }

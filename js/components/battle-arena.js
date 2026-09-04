@@ -559,17 +559,17 @@ async function runChoreographedClash(arenaEl, modelA, modelB) {
 function drawLaserBeam(canvas, arenaEl, elA, elB) {
   if (!canvas || !elA || !elB) return;
   const ctx = canvas.getContext("2d");
-  const arenaRect = arenaEl.getBoundingClientRect();
+  const canvasRect = canvas.getBoundingClientRect();
   const rectA = elA.getBoundingClientRect();
   const rectB = elB.getBoundingClientRect();
 
-  canvas.width = arenaRect.width;
-  canvas.height = arenaRect.height;
+  canvas.width = canvasRect.width;
+  canvas.height = canvasRect.height;
 
-  const x1 = rectA.right - arenaRect.left;
-  const y1 = rectA.top + rectA.height / 2 - arenaRect.top;
-  const x2 = rectB.left - arenaRect.left;
-  const y2 = rectB.top + rectB.height / 2 - arenaRect.top;
+  const x1 = rectA.right - canvasRect.left;
+  const y1 = rectA.top + rectA.height / 2 - canvasRect.top;
+  const x2 = rectB.left - canvasRect.left;
+  const y2 = rectB.top + rectB.height / 2 - canvasRect.top;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -578,7 +578,7 @@ function drawLaserBeam(canvas, arenaEl, elA, elB) {
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.strokeStyle = "rgba(255, 215, 0, 0.4)";
-  ctx.lineWidth = 10;
+  ctx.lineWidth = 8;
   ctx.stroke();
 
   // Inner core laser beam
@@ -602,17 +602,17 @@ function clearLaserBeam(canvas) {
  * Zero-dependency HTML5 canvas confetti celebration engine
  */
 function fireConfettiCannon(canvas, arenaEl) {
-  if (!canvas || !arenaEl) return;
+  if (!canvas) return;
   const ctx = canvas.getContext("2d");
-  const arenaRect = arenaEl.getBoundingClientRect();
+  const canvasRect = canvas.getBoundingClientRect();
 
-  canvas.width = arenaRect.width;
-  canvas.height = arenaRect.height;
+  canvas.width = canvasRect.width;
+  canvas.height = canvasRect.height;
 
   const colors = ["#ffd700", "#38bdf8", "#a855f7", "#10b981", "#ffffff"];
   const particles = Array.from({ length: 110 }, () => ({
-    x: arenaRect.width / 2 + (Math.random() - 0.5) * 120,
-    y: 120,
+    x: canvasRect.width / 2 + (Math.random() - 0.5) * 120,
+    y: Math.min(80, canvasRect.height * 0.25),
     vx: (Math.random() - 0.5) * 14,
     vy: (Math.random() - 1.2) * 13,
     size: Math.random() * 7 + 4,
