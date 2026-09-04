@@ -23,7 +23,7 @@ export function renderModelDiff(store) {
   if (!data) return;
 
   const models = data.models || [];
-  const diffModelIds = store.diffModels || ["claude-3-5-sonnet", "gemini-2-0-flash"];
+  const diffModelIds = store.diffModels || ["claude-fable-5-1", "gemini-3-8-flash"];
   const isThree = diffModelIds.length >= 3;
   const isBattleMode = store.diffViewMode === "battle";
 

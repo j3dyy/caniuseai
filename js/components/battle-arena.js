@@ -83,8 +83,8 @@ export function renderBattleArena(store) {
   if (!data) return "";
 
   const models = data.models || [];
-  const modelIdA = store.diffModels[0] || "claude-3-5-sonnet";
-  const modelIdB = store.diffModels[1] || "gemini-2-0-flash";
+  const modelIdA = store.diffModels[0] || "claude-fable-5-1";
+  const modelIdB = store.diffModels[1] || "gemini-3-8-flash";
 
   const modelA = models.find(m => m.id === modelIdA) || models[0];
   const modelB = models.find(m => m.id === modelIdB) || models[1] || models[0];
