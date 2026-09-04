@@ -34,11 +34,6 @@ docker build -t caniuseai .
 docker run -d -p 8081:8081 --name caniuseai caniuseai
 ```
 
-### Option 3: Docker Compose
-```bash
-docker compose up -d
-```
-
 Open **http://localhost:8081** in your browser.
 
 ---
